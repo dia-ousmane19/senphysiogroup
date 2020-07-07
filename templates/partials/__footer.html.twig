@@ -1,0 +1,43 @@
+
+
+<!-- footer -->
+<div class="container-fluid bg-light ">
+  <footer class="pt-4 my-md-5 pt-md-5 border-top">
+    <div class="row">
+      <div class="col-12 col-md">
+
+         <a href="{{path('home')}}"><img class="mb-2" src="{{asset('images/logo.png')}}" height="70" width="100" alt="logo" width="24" height="24"></a>
+        <small class="d-block mb-3 text-muted">&copy;2020</small>
+      </div>
+      <div class="col-6 col-md">
+        <h5 class="text-danger">Réseaux sociaux</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#"> <img height="30" width="30" src="{{asset('images/facebook.png')}}" alt="page faccebook"> Facebook </a></li>
+          <li><a class="text-muted" href="#"><img height="30" width="30" src="{{asset('images/instagram.png')}}" alt="" > Instagram</a></li>
+          <li><a class="text-muted" href="#"><img height="30" width="30" src="{{asset('images/twitter.png')}}" alt=""> Twitter</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5 class="text-danger">Newsletter</h5>
+        <form>
+          <div class="form-group">
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Adresse email">
+          </div>
+          <button type="submit" class="btn btn-block btn-danger">Envoyer</button>
+        </form>
+      </div>
+      <div class="col-6 col-md">
+        <h5 class="text-danger">A propos</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="{{path('apropos')}}">Qui sommes-nous?</a></li>
+          <li><a class="text-muted" href="{{path('contact')}}">Contactez-nous</a></li>
+          <li class="text-muted number">+221 33 877 00 29</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <div class="border-top">
+    <p class="text-center"><small>Designed & created by <a href="#">senIT Technology</a> </small></p> 
+  </div>
+</div>
+<!-- fin du footer -->

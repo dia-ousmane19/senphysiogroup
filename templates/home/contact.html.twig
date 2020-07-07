@@ -1,0 +1,41 @@
+{{ include('partials/__header.html.twig') }}
+{% block body %}
+<div class="bg-light">
+  <h1 class="display-4 text-center">Contactez-nous</h1>
+</div>
+<div class="container">
+  <div class="row">
+    <!-- formulaire -->
+  <div class="col-md-5">
+    <h4 class="bagde badge-primary text-center rounded">Par Email</h4>
+    <p class="lead " id="message_contact">Lorem ipsum dolor sit amet, consectetur adipisicing elit
+      , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.
+     </p>
+    <form>
+      <div class="form-group">
+        <input type="text" class="form-control" id="exampleInputEmail1" a placeholder="Votre nom (optionnel)">
+
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id=""  placeholder="Votre addresse Email (obligatoire)">
+      </div>
+      <div class="form-group">
+        <textarea class="form-control" id="" placeholder="Votre message (obligatoire)" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary mb-1">Envoyer</button>
+    </form>
+  </div>
+  <!-- fin du formulaire -->
+  <!-- info -->
+  <div class="col-md-4">
+    
+  </div>
+  <!-- fin de l'info -->
+  </div>
+</div>
+
+
+{% endblock %}
+
+{{ include('partials/__footer.html.twig') }}

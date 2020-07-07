@@ -1,0 +1,60 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil - SenIT technology{% endblock %}
+{% block stylesheets %}
+
+<link href="https://fonts.googleapis.com/css2?family=Philosopher:ital@1&family=Roboto:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Philosopher:ital@1&family=Roboto:wght@500&family=Vidaloka&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{asset('css/home.css')}}">
+{% endblock %}
+
+{% block body %}
+<header class="border-bottom">
+  <!-- le menu -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-default">
+    <a class="navbar-brand" href="{{path('home')}}"> <img src="{{asset('images/logo.png')}}" height="50" width="72" alt=""> </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+
+      </ul>
+      <span class="navbar-text">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link "  href="{{path('home')}}">Accueil</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Physio Sport Dakar
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item " href="{{path('prestation')}}">Prestation</a>
+              <a class="dropdown-item " href="{{path('prv')}}">Prise de Rendez-Vous</a>
+              <a class="dropdown-item " href="{{path('tarif')}}">Tarif</a>
+              <a class="dropdown-item " href="{{path('intervenant')}}">Intervenants</a>
+              <a class="dropdown-item " href="{{path('lieu')}}">Adresse <i class='fas fa-map-marker-alt'></i></a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#">Dakar Physio Tools</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{path('IPD')}}">Institut Physio Dakar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  font-weight-bold" href="{{path('contact')}}">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{path('apropos')}}">A propos</a>
+          </li>
+        </ul>
+      </span>
+    </div>
+  </nav>
+  <!-- fin du menu -->
+
+</header>
+{% endblock %}

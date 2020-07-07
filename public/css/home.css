@@ -1,0 +1,26 @@
+/* @font-face {
+  font-family: myFirstFont;
+  src: url(sansation_light.woff);
+} */
+body,html{
+  padding: 0;
+  margin: 0;
+}
+.container-fluid{
+  margin: 0;
+}
+
+a,.number,p{
+  font-family: 'Philosopher', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Vidaloka', serif;
+font-size: 15px;
+
+}
+#message_contact{
+font-family: 'Roboto', sans-serif;
+}
+.commande{
+font-family: 'Roboto', sans-serif;
+font-family: 'Philosopher', sans-serif;
+}
