@@ -1,37 +1,57 @@
 {{ include('partials/__header.html.twig') }}
 {% block body %}
-<div class="bg-light">
+<div class="bg-light border-bottom mb-4">
   <h1 class="display-4 text-center">Contactez-nous</h1>
 </div>
+
+
 <div class="container">
+
+  <div class="" >
+  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7715.786820288257!2d-17.4159158!3d14.7750334!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec10c5f8ef21227%3A0xd30bb26f6b39c28d!2sMALIBU%20BEACH!5e0!3m2!1sen!2ssn!4v1594130024361!5m2!1sen!2ssn" class="w-100 col-xs-12"  frameborder="0" style="border:0;" height="450" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+  </div>
+  <hr class="m-4">
   <div class="row">
     <!-- formulaire -->
-  <div class="col-md-5">
-    <h4 class="bagde badge-primary text-center rounded">Par Email</h4>
-    <p class="lead " id="message_contact">Lorem ipsum dolor sit amet, consectetur adipisicing elit
-      , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.
-     </p>
-    <form>
-      <div class="form-group">
-        <input type="text" class="form-control" id="exampleInputEmail1" a placeholder="Votre nom (optionnel)">
+    <div class="col-md-5">
+      <h4 class="bagde badge-danger text-center rounded">Par Email</h4>
+      <p class="lead " id="message_contact">Lorem ipsum dolor sit amet, consectetur adipisicing elit
+        , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+      <div class="">
+        <h3 class="text-center lead text-font-uppercase">Contact info</h3>
+
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" id="emailClick"><img height="70" width="80" src="{{asset('images/message.png')}}" alt=""> </li>
+          <div class="" id="email">
+            <li class="list-group-item" >contact@senphysiogroup.com</li>
+            <li class="list-group-item" >+221 33 877 00 29</li>
+          </div>
+          <li class="list-group-item"><a href="#"><img height="90" width="100" src="{{asset('images/whatsapp.png')}}" alt=""> </a></li>
+          <li class="list-group-item"></li>
+
+        </ul>
 
       </div>
-      <div class="form-group">
-        <input type="text" class="form-control" id=""  placeholder="Votre addresse Email (obligatoire)">
-      </div>
-      <div class="form-group">
-        <textarea class="form-control" id="" placeholder="Votre message (obligatoire)" rows="3"></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary mb-1">Envoyer</button>
-    </form>
-  </div>
-  <!-- fin du formulaire -->
-  <!-- info -->
-  <div class="col-md-4">
-    
-  </div>
-  <!-- fin de l'info -->
+
+    </div>
+    <!-- fin du formulaire -->
+    <!-- info -->
+    <div class="col-md-5">
+      <form>
+        <div class="form-group">
+          <input type="text" class="form-control" id="exampleInputEmail1" a placeholder="Votre nom (optionnel)">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id=""  placeholder="Votre addresse Email (obligatoire)">
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" id="" placeholder="Votre message (obligatoire)" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-danger btn-block mb-1">Envoyer</button>
+      </form>
+    </div>
+    <!-- fin de l'info -->
   </div>
 </div>
 
@@ -39,3 +59,17 @@
 {% endblock %}
 
 {{ include('partials/__footer.html.twig') }}
+{% block javascripts %}
+<script type="text/javascript">
+$(document).ready(function(){
+  $('#email').hide();
+  $('#emailClick').click(function(){
+    $('#email').fadeIn('slow');
+  });
+
+
+
+});
+
+</script>
+{% endblock %}

@@ -2,10 +2,15 @@
   font-family: myFirstFont;
   src: url(sansation_light.woff);
 } */
+* {
+  box-sizing: border-box
+}
 body,html{
   padding: 0;
   margin: 0;
+
 }
+
 .container-fluid{
   margin: 0;
 }
@@ -17,10 +22,33 @@ font-family: 'Vidaloka', serif;
 font-size: 15px;
 
 }
-#message_contact{
-font-family: 'Roboto', sans-serif;
+header a{
+  color: #dc3545;
 }
+
 .commande{
 font-family: 'Roboto', sans-serif;
 font-family: 'Philosopher', sans-serif;
+}
+#img_hover:hover img{
+  transform: scale(1.01);
+}
+#i{
+  z-index: 1;
+  background-color: red;
+  color: #fff;
+  padding: 5px 8px;
+  font-size: 30px;
+  position: fixed;
+  bottom: 37px;
+  right: 80px;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition:  opacity .3s ease-in-out;
+}
+#i:hover{
+  background: green;
+  transition: .5s;
 }

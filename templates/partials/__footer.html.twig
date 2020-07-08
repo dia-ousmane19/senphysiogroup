@@ -1,12 +1,16 @@
 
 
+{% block javascripts %}
+
+{% endblock %}
+
 <!-- footer -->
 <div class="container-fluid bg-light ">
   <footer class="pt-4 my-md-5 pt-md-5 border-top">
     <div class="row">
       <div class="col-12 col-md">
 
-         <a href="{{path('home')}}"><img class="mb-2" src="{{asset('images/logo.png')}}" height="70" width="100" alt="logo" width="24" height="24"></a>
+        <a href="{{path('home')}}"><img class="mb-2" src="{{asset('images/logo.png')}}" height="70" width="100" alt="logo" width="24" height="24"></a>
         <small class="d-block mb-3 text-muted">&copy;2020</small>
       </div>
       <div class="col-6 col-md">
@@ -32,12 +36,13 @@
           <li><a class="text-muted" href="{{path('apropos')}}">Qui sommes-nous?</a></li>
           <li><a class="text-muted" href="{{path('contact')}}">Contactez-nous</a></li>
           <li class="text-muted number">+221 33 877 00 29</li>
+          <li> <a href="#"><img height="70" width="80" src="{{asset('images/whatsapp.png')}}" alt=""></a> </li>
         </ul>
       </div>
     </div>
   </footer>
   <div class="border-top">
-    <p class="text-center"><small>Designed & created by <a href="#">senIT Technology</a> </small></p> 
+    <p class="text-center"><small>Designed & created by <a href="#">SENIT TECHNOLOGY</a> </small></p>
   </div>
 </div>
 <!-- fin du footer -->
