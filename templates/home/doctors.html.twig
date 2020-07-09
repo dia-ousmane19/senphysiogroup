@@ -1,0 +1,93 @@
+{{ include('partials/__header.html.twig') }}
+{% block body %}
+<!-- banniere doctor -->
+<div class="container-fluid bg-danger" data-aos="fade-in" data-aos-duration="3000">
+  <h1 class="display-4 text-center text-white">Intervenant</h1>
+</div>
+<hr class="bg-danger w-25">
+<!-- fin de la banniere -->
+<!-- les informations du docteurs -->
+<div class="container mt-4" >
+  <div class="row">
+    <!-- photo du docteur -->
+    <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5" data-aos="fade-right" data-aos-duration="3000">
+      <img class="card-img-top w-100" height="377" src="{{asset('images/consultation.jpeg')}}" alt="Card image cap">
+    </div>
+    <!-- fin -->
+    <!-- informations  -->
+    <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5" data-aos="fade-left" data-aos-duration="3000">
+      <header>
+        <h1>Dr diop</h1>
+        <small>Neurologist</small>
+      </header>
+      <div class="">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim v </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim v </p>
+      </div>
+      <footer>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><i class="far fa-envelope"></i> <a href="#">drdiop@senphysiogroup.com</a></li>
+          <li class="list-group-item"><i class="fas fa-phone-square-alt"></i> <a href="#">+221 77 556 55 33</a></li>
+        </ul>
+
+
+      </footer>
+        <!-- reseaux sociaux -->
+      <div class="">
+        <!-- <ul>
+          <li><a href="#"><i class="far fa-facebook"></i></a></li>
+          <li><a href="#"><i class="far fa-whatsapp"></i></a></li>
+          <li><a href="#"><i class="far fa-twitter"></i></a></li>
+        </ul> -->
+
+      </div>
+    </div>
+    <!-- fin -->
+
+  </div>
+
+</div>
+<!-- fin -->
+<hr class="bg-danger w-25">
+<!-- les autres intervenants -->
+
+<div class="container mt-4">
+  <h3 class="text-center text-danger">Les autres intervenants</h3>
+  <section class=" mt-4 pb-4 mb-4">
+    <hr>
+    <div class="card-deck">
+      <div class="card border-0" data-aos="fade-right" data-aos-duration="3000">
+        <a href="" id="img_hover">  <img class="card-img-top w-100" height="277" src="{{asset('images/soins.jpeg')}}" alt="Card image cap"></a>
+        <div class="card-body">
+          <a href="#"><h5 class="card-title text-danger"> Dr Ndiaye </h5></a>
+          <small class="text-muted">Kine</small>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+        </div>
+      </div>
+      <div class="card border-0" data-aos="fade-down" data-aos-duration="3000">
+        <a href="" id="img_hover"><img class="card-img-top w-100" height="277" src="{{asset('images/reathletisation.jpeg')}}" alt="Card image cap"></a>
+        <div class="card-body">
+          <a href="#"><h5 class="card-title text-danger"> Dr Diop </h5></a>
+          <small class="text-muted">Neurologist</small>
+          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+
+        </div>
+      </div>
+      <div class="card border-0" data-aos="fade-left" data-aos-duration="3000">
+        <a href="" id="img_hover"><img class="card-img-top w-100" height="277" src="{{asset('images/consultation.jpeg')}}" alt="Card image cap"></a>
+        <div class="card-body">
+         <a href="#"><h5 class="card-title text-danger"> Dr Fall</h5></a>
+          <small class="text-muted">Dentist</small>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+<!-- fin -->
+
+
+{% endblock %}
+{{ include('partials/__footer.html.twig') }}

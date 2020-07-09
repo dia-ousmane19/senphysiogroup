@@ -64,10 +64,17 @@ class HomeController extends AbstractController
         return $this->render('home/ipd.html.twig');
     }
     /**
-     * @Route("/ou-nous-trouver", name="lieu")
+     * @Route("/Adresse", name="lieu")
      */
     public function lieu()
     {
         return $this->render('home/lieu.html.twig');
+    }
+    /**
+     * @Route("/doctors", name="docteur")
+     */
+    public function docteur()
+    {
+        return $this->render('home/doctors.html.twig');
     }
 }

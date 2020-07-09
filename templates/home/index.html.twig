@@ -4,6 +4,8 @@
 <div class="container-fluif banniere" >
   <img class="image-fluid w-100" src="{{asset('images/slide.jpg')}}" alt="">
 </div>
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-c76f631c-c023-4a9b-ad2e-1c35b596028a"></div>
 <!-- fin de la banniere -->
 <!-- button scroll top -->
 <i id="i" class="fas fa-chevron-up"></i>
@@ -11,7 +13,7 @@
 <!-- le RV -->
 
 <section class="container rounded mt-4 bg-danger " data-aos="fade-in" data-aos-duration="3000">
-  <a href="#" class="btn btn-danger btn-block"> <h2>Prenez un Rendez-Vous</h2> </a>
+  <a href="#" class="btn btn-danger btn-block"> <h2>Prenez un Rendez-Vous <i class="fas fa-caret-right"></i> </h2>  </a>
 </section>
 <!-- fin RV -->
 <!-- services -->
@@ -24,7 +26,7 @@
     <div class="card  border-0" data-aos="fade-left" data-aos-duration="3000">
       <a href="#" id="img_hover"><img class="card-img-top w-100"  height="277" src="{{asset('images/soins.jpeg')}}" alt="Card image cap"></a>
       <div class="card-body">
-        <h5 class="card-title text-danger">Soins en Rééducation et Réadaptation Fonctionnelle</h5>
+        <a href="#"><h5 class="card-title text-danger"> Soins en Rééducation et Réadaptation Fonctionnelle</h5></a>
         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
 
       </div>
@@ -32,7 +34,7 @@
     <div class="card  border-0" >
       <a href="#" id="img_hover"><img class="card-img-top w-100"   height="277" src="{{asset('images/reathletisation.jpeg')}}" alt="Card image cap"></a>
       <div class="card-body">
-        <h5 class="card-title text-danger">Réathletisation</h5>
+        <a href="#"><h5 class="card-title text-danger"> Réathletisation </h5></a>
         <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
 
       </div>
@@ -40,7 +42,7 @@
     <div class="card border-0" data-aos="fade-right" data-aos-duration="3000">
       <a id="img_hover" href="#"><img class="card-img-top w-100" height="277" src="{{asset('images/consultation.jpeg')}}" alt="Card image cap"></a>
       <div class="card-body">
-        <h5 class="card-title text-danger">Consultation en neurologie</h5>
+        <a href="#"><h5 class="card-title text-danger"> Consultation en neurologie</h5></a>
         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
       </div>
     </div>
@@ -60,9 +62,9 @@
   <hr>
   <div class="card-deck">
     <div class="card border-0" data-aos="fade-right" data-aos-duration="3000">
-      <a href="" id="img_hover">  <img class="card-img-top w-100" height="277" src="{{asset('images/soins.jpeg')}}" alt="Card image cap"></a>
+      <a href="{{path('docteur')}}" id="img_hover">  <img class="card-img-top w-100" height="277" src="{{asset('images/soins.jpeg')}}" alt="Card image cap"></a>
       <div class="card-body">
-        <h5 class="card-title text-danger">Dr Ndiaye</h5>
+        <a href="{{path('docteur')}}"><h5 class="card-title text-danger"> Dr Ndiaye </h5></a>
         <small class="text-muted">Kine</small>
         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
 
@@ -71,7 +73,7 @@
     <div class="card border-0" data-aos="fade-down" data-aos-duration="3000">
       <a href="" id="img_hover"><img class="card-img-top w-100" height="277" src="{{asset('images/reathletisation.jpeg')}}" alt="Card image cap"></a>
       <div class="card-body">
-        <h5 class="card-title text-danger">Dr Diop</h5>
+        <a href="#"><h5 class="card-title text-danger"> Dr Diop </h5></a>
         <small class="text-muted">Neurologist</small>
         <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
 
@@ -80,7 +82,7 @@
     <div class="card border-0" data-aos="fade-left" data-aos-duration="3000">
       <a href="" id="img_hover"><img class="card-img-top w-100" height="277" src="{{asset('images/consultation.jpeg')}}" alt="Card image cap"></a>
       <div class="card-body">
-        <h5 class="card-title text-danger">Dr Fall</h5>
+       <a href="#"><h5 class="card-title text-danger"> Dr Fall</h5></a>
         <small class="text-muted">Dentist</small>
         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
       </div>
@@ -109,7 +111,7 @@
           <a href="#" id="img_hover">  <img src="{{asset('images/photo1.jpg')}}" class="card-img-top" alt="..."></a>
           <div class="card-body">
             <small class="text-muted">12 Mai 2018</small>
-            <h5 class="card-title">Card title</h5>
+            <a href="#"><h5 class="card-title">Card title </h5></a>
             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
             <a class="btn btn-sm btn-danger" href="#">Visiter</a>
           </div>
@@ -120,7 +122,7 @@
           <a href="" id="img_hover">  <img src="{{asset('images/photo2.jpg')}}" class="card-img-top" alt="..."></a>
           <div class="card-body">
             <small class="text-muted">12 Mai 2018</small>
-            <h5 class="card-title">Card title</h5>
+            <a href="#"><h5 class="card-title">Card title </h5></a>
             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
             <a class="btn btn-sm btn-danger" href="#">Visiter</a>
           </div>
@@ -131,7 +133,7 @@
           <a href="" id="img_hover">  <img src="{{asset('images/photo3.jpg')}}" class="card-img-top" alt="..."></a>
           <div class="card-body">
             <small class="text-muted">12 Mai 2018</small>
-            <h5 class="card-title">Card title</h5>
+            <a href="#"><h5 class="card-title">Card title</h5></a>
             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
             <a class="btn btn-sm btn-danger" href="#">Visiter</a>
           </div>
@@ -148,7 +150,7 @@
 <!-- le RV -->
 
 <section class="container rounded bg-danger " data-aos="fade-in" data-aos-duration="3000">
-  <a href="#" class="btn btn-danger btn-block"> <h2>Prenez un Rendez-Vous</h2> </a>
+  <a href="#" class="btn btn-danger btn-block"> <h2>Prenez un Rendez-Vous <i class="fas fa-caret-right"></i></h2> </a>
 </section>
 <!-- fin RV -->
 <section class="container mt-4 border-top pt-4 " data-aos="fade-up" data-aos-duration="3000">
@@ -158,7 +160,7 @@
       <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
     </div>
     <div class="" data-aos="fade-up" data-aos-duration="3000">
-      <a class="btn btn-primary btn-danger btn-lg"  href="#" role="button">Voir notre boutique</a>
+      <a class="btn btn-primary btn-danger btn-lg"  href="#" role="button">Visiter notre boutique <i class="fas fa-caret-right"></i></a>
     </div>
 
   </div>

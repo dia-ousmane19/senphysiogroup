@@ -4,6 +4,7 @@
 } */
 * {
   box-sizing: border-box
+  font-family: 'PT Sans', sans-serif;
 }
 body,html{
   padding: 0;
@@ -15,15 +16,18 @@ body,html{
   margin: 0;
 }
 
-a,.number,p{
+a,.number{
   font-family: 'Philosopher', sans-serif;
 font-family: 'Roboto', sans-serif;
 font-family: 'Vidaloka', serif;
 font-size: 15px;
+text-decoration: none;
 
 }
+
 header a{
   color: #dc3545;
+
 }
 
 .commande{
