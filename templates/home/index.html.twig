@@ -1,32 +1,40 @@
 {{ include('partials/__header.html.twig') }}
 {% block body %}
+<!-- loader -->
+<div class="loader_bg">
+  <div class="loader">
+    <img src="{{asset('images/loader.gif')}}" alt="">
+  </div>
+</div>
+<!-- fin loader -->
+<div class="body">
 <!-- la banniere -->
 <div class="container-fluif banniere" >
   <img class="image-fluid w-100" src="{{asset('images/slide.jpg')}}" alt="">
 </div>
-
-
 <!-- fin de la banniere -->
 <!-- button scroll top -->
 <i id="i" class="fas fa-chevron-up"></i>
 <!-- fin  -->
 <!-- le RV -->
 
-<section class="container rounded mt-4 bg-danger " data-aos="fade-in" data-aos-duration="3000">
-  <a href="#" class="btn btn-danger btn-block"> <h2>Prenez un Rendez-Vous <i class="fas fa-caret-right"></i> </h2>  </a>
+<section class="container rounded mt-4 bg-dark " data-aos="fade-in" data-aos-duration="3000">
+  <a href="{{path('prv')}}" class="btn btn-dark p-4 btn-block"> <h2>Prenez un Rendez-Vous <i class="fas fa-caret-right"></i> </h2>  </a>
 </section>
 <!-- fin RV -->
 <!-- services -->
 <section class="container border-top  mt-4 pb-4 mb-4">
-  <h2 class="display-4 text-center text-danger">Nos services</h2>
-  <p class="text-center">Lorem ipsum dolor sod tempor incididunt ut labore et dolo ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo conseq.</p>
+  <h3 class="text-center text-danger">Nos services</h3>
+  <p class="text-center lead">
+Nous offrons des prestations allant des <strong> soins en kinésithérapie aux soins de confort en passant par la réathlétisation et les consultations médicales spécialisées</strong>.
+</p>
   <hr>
 
   <div class="card-deck" data-aos="fade-in" data-aos-duration="3000">
     <div class="card  border-0" data-aos="fade-left" data-aos-duration="3000">
       <a href="#" id="img_hover"><img class="card-img-top w-100"  height="277" src="{{asset('images/soins.jpeg')}}" alt="Card image cap"></a>
       <div class="card-body">
-        <a href="#"><h5 class="card-title text-danger"> Soins en Rééducation et Réadaptation Fonctionnelle</h5></a>
+        <a href="#"><h5 class="card-title text-primary"> Soins en Rééducation et Réadaptation Fonctionnelle</h5></a>
         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
 
       </div>
@@ -34,7 +42,7 @@
     <div class="card  border-0" >
       <a href="#" id="img_hover"><img class="card-img-top w-100"   height="277" src="{{asset('images/reathletisation.jpeg')}}" alt="Card image cap"></a>
       <div class="card-body">
-        <a href="#"><h5 class="card-title text-danger"> Réathletisation </h5></a>
+        <a href="#"><h5 class="card-title text-primary"> Réathletisation </h5></a>
         <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
 
       </div>
@@ -42,7 +50,7 @@
     <div class="card border-0" data-aos="fade-right" data-aos-duration="3000">
       <a id="img_hover" href="#"><img class="card-img-top w-100" height="277" src="{{asset('images/consultation.jpeg')}}" alt="Card image cap"></a>
       <div class="card-body">
-        <a href="#"><h5 class="card-title text-danger"> Consultation en neurologie</h5></a>
+        <a href="#"><h5 class="card-title text-primary"> Consultation en neurologie</h5></a>
         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
       </div>
     </div>
@@ -56,33 +64,33 @@
 <!-- nos intervenants -->
 
 <section class="container border-top  mt-4 pb-4 mb-4">
-  <h2 class="display-4 text-center text-danger">Nos intervenants</h2>
+  <h3 class="text-center text-danger">Nos intervenants</h3>
   <p class="text-center">Lorem ipsum dolor sod tempor incididunt ut labore et dolo ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo conseq.</p>
 
   <hr>
   <div class="card-deck">
-    <div class="card border-0" data-aos="fade-right" data-aos-duration="3000">
+    <div class="card border-0" >
       <a href="{{path('docteur')}}" id="img_hover">  <img class="card-img-top w-100" height="277" src="{{asset('images/soins.jpeg')}}" alt="Card image cap"></a>
       <div class="card-body">
-        <a href="{{path('docteur')}}"><h5 class="card-title text-danger"> Dr Ndiaye </h5></a>
+        <a href="{{path('docteur')}}"><h5 class="card-title text-primary"> Dr Ndiaye </h5></a>
         <small class="text-muted">Kine</small>
         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
 
       </div>
     </div>
-    <div class="card border-0" data-aos="fade-down" data-aos-duration="3000">
+    <div class="card border-0" >
       <a href="" id="img_hover"><img class="card-img-top w-100" height="277" src="{{asset('images/reathletisation.jpeg')}}" alt="Card image cap"></a>
       <div class="card-body">
-        <a href="#"><h5 class="card-title text-danger"> Dr Diop </h5></a>
+        <a href="#"><h5 class="card-title text-primary"> Dr Diop </h5></a>
         <small class="text-muted">Neurologist</small>
         <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
 
       </div>
     </div>
-    <div class="card border-0" data-aos="fade-left" data-aos-duration="3000">
+    <div class="card border-0" >
       <a href="" id="img_hover"><img class="card-img-top w-100" height="277" src="{{asset('images/consultation.jpeg')}}" alt="Card image cap"></a>
       <div class="card-body">
-       <a href="#"><h5 class="card-title text-danger"> Dr Fall</h5></a>
+       <a href="#"><h5 class="card-title text-primary"> Dr Fall</h5></a>
         <small class="text-muted">Dentist</small>
         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
       </div>
@@ -95,7 +103,7 @@
 
   <div class="border-top border-bottom d-flex flex-wrap flex-row justify-content-between">
     <div class="">
-      <h2 class="text-danger">Nos formations</h2>
+      <h3 class="text-danger">Nos formations</h3>
     </div>
     <div class="mt-1">
       <button class="btn btn-danger btn-sm mb-1">Voir plus</button>
@@ -149,8 +157,8 @@
 -->
 <!-- le RV -->
 
-<section class="container rounded bg-danger " data-aos="fade-in" data-aos-duration="3000">
-  <a href="#" class="btn btn-danger btn-block"> <h2>Prenez un Rendez-Vous <i class="fas fa-caret-right"></i></h2> </a>
+<section class="container rounded bg-dark " data-aos="fade-in" data-aos-duration="3000">
+  <a href="{{path('prv')}}" class="btn p-4 btn-dark btn-block"> <h2>Prenez un Rendez-Vous <i class="fas fa-caret-right"></i></h2> </a>
 </section>
 <!-- fin RV -->
 <section class="container mt-4 border-top pt-4 " data-aos="fade-up" data-aos-duration="3000">
@@ -168,6 +176,7 @@
 </section>
 <!-- la fin -->
 <!-- fin -->
+</div>
 
 {{ include('partials/__footer.html.twig') }}
 {% endblock %}
@@ -192,5 +201,12 @@ $(document).ready(function () {
 
 });
 
+</script>
+<script type="text/javascript">
+$(document).ready(function () {
+  $('.loader_bg').fadeOut('slow',function () {
+    $('.body').fadeIn('slow');
+  });
+});
 </script>
 {% endblock %}

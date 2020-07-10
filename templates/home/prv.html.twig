@@ -1,7 +1,105 @@
-{{ include('partials/__header.html.twig') }}
-{% block body %}
-<h1>Prise de rendez-vous</h1>
 
+
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil - SenIT technology{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<link href="https://fonts.googleapis.com/css2?family=Philosopher:ital@1&family=Roboto:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Philosopher:ital@1&family=Roboto:wght@500&family=Vidaloka&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{asset('css/home.css')}}">
 {% endblock %}
 
+{% block body %}
+<header class="border-bottom">
+  <!-- le menu -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-default">
+    <a class="navbar-brand" href="{{path('home')}}"><img src="{{asset('images/SportLogo.png')}}" height="50" width="50" alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+
+      </ul>
+      <span class="navbar-text">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active"  id="li">
+            <a class="nav-link "  href="{{path('home')}}" >Accueil</a>
+          </li>
+          <li class="nav-item dropdown active" id="li">
+            <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Physio Sport Dakar
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown">
+              <a class="dropdown-item "  href="{{path('prestation')}}">Prestation</a>
+              <a class="dropdown-item"  href="{{path('prv')}}">Prise de Rendez-Vous</a>
+              <a class="dropdown-item"  href="{{path('tarif')}}">Tarif</a>
+              <a class="dropdown-item"  href="{{path('intervenant')}}">Intervenants</a>
+              <a class="dropdown-item"  href="{{path('lieu')}}">Adresse <i class='fas fa-map-marker-alt'></i></a>
+            </div>
+          </li>
+          <li class="nav-item " id="li">
+            <a class="nav-link "  href="#">Dakar Physio Tools</a>
+          </li>
+          <li class="nav-item " id="li">
+            <a class="nav-link "  href="{{path('IPD')}}">Institut Physio Dakar</a>
+          </li>
+          <li class="nav-item " id="li">
+            <a class="nav-link  font-weight-bold"  href="{{path('contact')}}">Contact</a>
+          </li>
+          <li class="nav-item " id="li">
+            <a class="nav-link "  href="{{path('apropos')}}">A propos</a>
+          </li>
+        </ul>
+      </span>
+    </div>
+  </nav>
+  <!-- fin du menu -->
+</header>
+
+<!-- la banniere -->
+<div class="container-fluif banniere" >
+  <img class="image-fluid w-100" src="{{asset('images/slide.jpg')}}" alt="">
+</div>
+<!-- fin de la banniere -->
+<div class="container border-top border-bottom m-4 p-4 ">
+  <h1 class="text-primary text-center">Prise de rendez-vous</h1>
+  <p class="text-center lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut lab</p>
+</div>
+<div class="container">
+  <div class="m-4 bg-secondary rounded p-4">
+    <form>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <input type="email" class="form-control" id="inputEmail4" placeholder="Votre nom complet">
+        </div>
+        <div class="form-group col-md-6">
+          <input type="email" class="form-control" id="inputPassword4" placeholder="Adresse email">
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="inputAddress" placeholder="Numero de telephone">
+      </div>
+      <div class="form-group">
+        <select class="form-control" id="exampleFormControlSelect1">
+          <option>Services</option>
+          <option>Soins confort</option>
+          <option>Reathletisation</option>
+          <option>consultation</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <div class="custom-file mb-2">
+          <input type="file" class="custom-file-input" id="inputGroupFile04">
+          <label class="custom-file-label" for="inputGroupFile04">Choisir votre bulletin</label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Valider</button>
+    </form>
+  </div>
+</div>
 {{ include('partials/__footer.html.twig') }}
+{% endblock %}

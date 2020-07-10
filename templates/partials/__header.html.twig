@@ -7,8 +7,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital@1&family=Roboto:wght@500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital@1&family=Roboto:wght@500&family=Vidaloka&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
-
-
 <link rel="stylesheet" href="{{asset('css/home.css')}}">
 {% endblock %}
 
@@ -26,32 +24,32 @@
       </ul>
       <span class="navbar-text">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link "  href="{{path('home')}}">Accueil</a>
+          <li class="nav-item active"  id="li">
+            <a class="nav-link "  href="{{path('home')}}" >Accueil</a>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown active" id="li">
             <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Physio Sport Dakar
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item " href="{{path('prestation')}}">Prestation</a>
-              <a class="dropdown-item " href="{{path('prv')}}">Prise de Rendez-Vous</a>
-              <a class="dropdown-item " href="{{path('tarif')}}">Tarif</a>
-              <a class="dropdown-item " href="{{path('intervenant')}}">Intervenants</a>
-              <a class="dropdown-item " href="{{path('lieu')}}">Adresse <i class='fas fa-map-marker-alt'></i></a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown">
+              <a class="dropdown-item "  href="{{path('prestation')}}">Prestation</a>
+              <a class="dropdown-item"  href="{{path('prv')}}">Prise de Rendez-Vous</a>
+              <a class="dropdown-item"  href="{{path('tarif')}}">Tarif</a>
+              <a class="dropdown-item"  href="{{path('intervenant')}}">Intervenants</a>
+              <a class="dropdown-item"  href="{{path('lieu')}}">Adresse <i class='fas fa-map-marker-alt'></i></a>
             </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link " href="#">Dakar Physio Tools</a>
+          <li class="nav-item " id="li">
+            <a class="nav-link "  href="#">Dakar Physio Tools</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link " href="{{path('IPD')}}">Institut Physio Dakar</a>
+          <li class="nav-item " id="li">
+            <a class="nav-link "  href="{{path('IPD')}}">Institut Physio Dakar</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link  font-weight-bold" href="{{path('contact')}}">Contact</a>
+          <li class="nav-item " id="li">
+            <a class="nav-link  font-weight-bold"  href="{{path('contact')}}">Contact</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link " href="{{path('apropos')}}">A propos</a>
+          <li class="nav-item " id="li">
+            <a class="nav-link "  href="{{path('apropos')}}">A propos</a>
           </li>
         </ul>
       </span>

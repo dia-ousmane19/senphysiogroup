@@ -37,6 +37,11 @@ class Intervenants
      */
     private $images;
 
+    /**
+     * @ORM\Column(type="string", length=128)
+     */
+    private $slug;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +91,18 @@ class Intervenants
     public function setImages(string $images): self
     {
         $this->images = $images;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }

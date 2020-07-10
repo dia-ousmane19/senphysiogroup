@@ -32,6 +32,21 @@ class Services
      */
     private $images;
 
+    /**
+     * @ORM\Column(type="string", length=128)
+     */
+    private $slug;
+
+    /**
+     * @ORM\Column(type="string", length=25, nullable=true)
+     */
+    private $dataAos;
+
+    /**
+     * @ORM\Column(type="string", length=10, nullable=true)
+     */
+    private $dataAosDuration;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,6 +84,42 @@ class Services
     public function setImages(string $images): self
     {
         $this->images = $images;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    public function getDataAos(): ?string
+    {
+        return $this->dataAos;
+    }
+
+    public function setDataAos(?string $dataAos): self
+    {
+        $this->dataAos = $dataAos;
+
+        return $this;
+    }
+
+    public function getDataAosDuration(): ?string
+    {
+        return $this->dataAosDuration;
+    }
+
+    public function setDataAosDuration(?string $dataAosDuration): self
+    {
+        $this->dataAosDuration = $dataAosDuration;
 
         return $this;
     }

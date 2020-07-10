@@ -1,7 +1,192 @@
-{{ include('partials/__header.html.twig') }}
-{% block body %}
-<h1>Institut physio dakar</h1>
 
+{% extends 'base.html.twig' %}
+
+{% block title %}senphysiogroup - Institut physio de Dakar{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<link href="https://fonts.googleapis.com/css2?family=Philosopher:ital@1&family=Roboto:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Philosopher:ital@1&family=Roboto:wght@500&family=Vidaloka&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{asset('css/home.css')}}">
 {% endblock %}
 
-{{ include('partials/__footer.html.twig') }}
+{% block body %}
+
+
+<div class="body">
+<header class="border-bottom">
+  <!-- le menu -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-default">
+    <a class="navbar-brand" href="{{path('home')}}"><img src="{{asset('images/InstitutLogo.png')}}" height="50" width="150" alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+
+      </ul>
+      <span class="navbar-text">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active"  id="li">
+            <a class="nav-link "  href="{{path('home')}}" >Accueil</a>
+          </li>
+          <li class="nav-item dropdown active" id="li">
+            <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Physio Sport Dakar
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown">
+              <a class="dropdown-item "  href="{{path('prestation')}}">Prestation</a>
+              <a class="dropdown-item"  href="{{path('prv')}}">Prise de Rendez-Vous</a>
+              <a class="dropdown-item"  href="{{path('tarif')}}">Tarif</a>
+              <a class="dropdown-item"  href="{{path('intervenant')}}">Intervenants</a>
+              <a class="dropdown-item"  href="{{path('lieu')}}">Adresse <i class='fas fa-map-marker-alt'></i></a>
+            </div>
+          </li>
+          <li class="nav-item " id="li">
+            <a class="nav-link "  href="#">Dakar Physio Tools</a>
+          </li>
+          <li class="nav-item " id="li">
+            <a class="nav-link "  href="{{path('IPD')}}">Institut Physio Dakar</a>
+          </li>
+          <li class="nav-item " id="li">
+            <a class="nav-link  font-weight-bold"  href="{{path('contact')}}">Contact</a>
+          </li>
+          <li class="nav-item " id="li">
+            <a class="nav-link "  href="{{path('apropos')}}">A propos</a>
+          </li>
+        </ul>
+      </span>
+    </div>
+  </nav>
+  <!-- fin du menu -->
+</header>
+
+
+
+
+<!-- la banniere -->
+<div class="container-fluif banniere" >
+  <img class="image-fluid w-100" src="{{asset('images/slide.jpg')}}" alt="">
+</div>
+<!-- fin de la banniere -->
+<div class="container bg-light p-4">
+  <a class="navbar-brand" href="{{path('home')}}"><img src="{{asset('images/InstitutLogo.png')}}" height="50" width="150" alt=""></a>
+
+</div>
+<!-- le corps de l'institut -->
+<div class="container">
+  <div class="row">
+    <!-- image -->
+    <div class="col-xs-12 col-sm-12 col-md-4">
+      <img class="card-img-top w-100" style="height:auto" src="{{asset('images/institu.png')}}" alt="Card image cap">
+      <div class="mt-2">
+        <a href="#" class="btn btn-block btn-primary">Plus d'infos</a>
+      </div>
+    </div>
+    <!-- fin -->
+    <!-- text -->
+    <div class="col-xs-12 col-sm-12 col-md-4">
+      <header>
+        <h1 class="badge badge-primary p-2 mt-1" style="font-size:23px">Présentation</h1>
+        <!-- <hr class="bg-primary"> -->
+      </header>
+      <div class="">
+        <p class="lead">
+          L’institut de Physiothérapie de Dakar offre des sessions de formation continue modulaire dans tous les domaines de la <strong>kinésithérapie</strong> en partenariat avec des <strong>instituts</strong> ou <strong>formateurs de renommé internationale</strong>.
+        </p><p class="lead"> Toutes nos sessions comportent des cours <strong>théoriques et pratique</strong>.</p>
+        <p class="lead">  Nous projetons également de nous lancer dans la formation initiale avec un programme répondant aux standards internationaux en matière de formation initiale en <strong>kinésithérapie</strong>.
+
+        </p>
+
+      </div>
+
+    </div>
+    <!-- fin -->
+    <!-- image -->
+    <div class="col-xs-12 col-sm-12 col-md-4">
+      <header>
+        <h3 class="badge badge-primary p-2 mt-1" style="font-size:23px">Institut Physio de Dakar</h3>
+      </header>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5">
+            <img class="card-img-top w-100 m-2" style="height:auto" src="{{asset('images/institut1.jpg')}}" alt="Card image cap">
+          </div>
+          <div class="col-md-5">
+            <img class="card-img-top w-100 m-2" style="height:auto" src="{{asset('images/institut2.jpeg')}}" alt="Card image cap">
+          </div>
+        </div>
+        <h4   style="font-size:23px" class="badge badge-primary text-center mt-2 mb-2">Nos filières</h4>
+        <ul class="list-group">
+          <li class="list-group-item">filière 1</li>
+          <li class="list-group-item">filière 2</li>
+          <li class="list-group-item">filière 3</li>
+          <li class="list-group-item">filière 4</li>
+          <li class="list-group-item">filière 5</li>
+
+        </ul>
+      </div>
+
+    </div>
+    <!-- fin -->
+
+  </div>
+
+</div>
+<!-- fin  -->
+
+<!-- footer -->
+<div class="container-fluid bg-light ">
+  <footer class="pt-4 my-md-5 pt-md-5 border-top">
+    <div class="row">
+      <div class="col-12 col-md">
+
+        <a href="{{path('home')}}"><img class="mb-2" src="{{asset('images/logo.png')}}" height="70" width="150" alt="logo" width="24" height="24"></a>
+        <small class="d-block mb-3 text-muted">&copy;2020</small>
+      </div>
+      <div class="col-6 col-md">
+        <h5 class="text-danger">Réseaux sociaux</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#"> <img height="30" width="30" src="{{asset('images/facebook.png')}}" alt="page faccebook"> Facebook </a></li>
+          <li><a class="text-muted" href="#"><img height="30" width="30" src="{{asset('images/instagram.png')}}" alt="" > Instagram</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5 class="text-danger">Newsletter</h5>
+        <form>
+          <div class="form-group">
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Adresse email">
+          </div>
+          <button type="submit" class="btn btn-block btn-danger">Envoyer</button>
+        </form>
+      </div>
+      <div class="col-6 col-md">
+        <h5 class="text-danger">A propos</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="{{path('apropos')}}">Qui sommes-nous?</a></li>
+          <li><a class="text-muted" href="{{path('contact')}}">Contactez-nous</a></li>
+          <li class="text-muted number">+221 33 877 00 29</li>
+          <li> <a href="#"><img height="70" width="80" src="" alt=""></a> </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <div class="border-top">
+    <p class="text-center"><small>Designed & developed by <a href="#">SEN IT TECHNOLOGY</a> </small></p>
+  </div>
+</div>
+</div>
+
+
+<!-- fin du footer -->
+
+{% endblock %}
+{% block javascripts %}
+<script type="text/javascript">
+$(document).ready(function () {
+  $('.loader_bg').fadeOut('slow',function () {
+    $('.body').fadeIn('slow');
+  });
+});
+</script>
+{% endblock %}
