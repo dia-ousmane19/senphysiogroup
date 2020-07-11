@@ -19,22 +19,22 @@ class IntervenantsRepository extends ServiceEntityRepository
         parent::__construct($registry, Intervenants::class);
     }
 
-    // /**
-    //  * @return Intervenants[] Returns an array of Intervenants objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @return Intervenants[] Returns an array of Intervenants objects
+     */
+
+    public function findAllIntervenant()
     {
         return $this->createQueryBuilder('i')
-            ->andWhere('i.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('i.id', 'ASC')
-            ->setMaxResults(10)
+            // ->andWhere('i.exampleField = :val')
+            // ->setParameter('val', $value)
+            // ->orderBy('i.id', 'ASC')
+            // ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
     }
-    */
+
 
     /*
     public function findOneBySomeField($value): ?Intervenants

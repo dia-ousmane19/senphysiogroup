@@ -3,16 +3,18 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\ServicesRepository;
+use App\Repository\IntervenantsRepository;
 class HomeController extends AbstractController
 {
     /**
      * @Route("/", name="home")
      */
-    public function index(ServicesRepository $reposervices)
+    public function index(ServicesRepository $reposervices,IntervenantsRepository $repoIntervenant)
     {
       $data=$reposervices->findAllService();
+      $dataIntervenant=$repoIntervenant->findAllIntervenant();
 
-        return $this->render('home/index.html.twig',compact('data'));
+        return $this->render('home/index.html.twig',compact('data','dataIntervenant'));
 
     }
     /**

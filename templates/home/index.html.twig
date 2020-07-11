@@ -32,31 +32,18 @@ Nous offrons des prestations allant des <strong> soins en kinésithérapie aux s
   <hr>
 
   <div class="card-deck" data-aos="fade-in" data-aos-duration="3000">
-
+    <!-- services -->
+  {% for dataService in data %}
     <div class="card  border-0" data-aos="fade-left" data-aos-duration="3000">
-      <a href="#" id="img_hover"><img class="card-img-top w-100"  height="277" src="{{asset('images/soins.jpeg')}}" alt="Card image cap"></a>
+      <a href="{{dataService.slug}}" id="img_hover"><img class="card-img-top w-100"  height="277" src="{{asset('images/')}}{{dataService.images}}" alt="Card image cap"></a>
       <div class="card-body">
-        <a href="#"><h5 class="card-title text-primary"> Soins en Rééducation et Réadaptation Fonctionnelle</h5></a>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-
+        <a href="{{dataService.slug}}"><h5 class="card-title text-primary">{{dataService.nom}}</h5></a>
+        <p class="card-text">{{dataService.description |raw |slice(0,150)}} ...</p>
+        <a class="btn btn-sm btn-danger" href="{{dataService.slug}}">Voir plus</a>
       </div>
     </div>
-
-    <div class="card  border-0" >
-      <a href="#" id="img_hover"><img class="card-img-top w-100"   height="277" src="{{asset('images/reathletisation.jpeg')}}" alt="Card image cap"></a>
-      <div class="card-body">
-        <a href="#"><h5 class="card-title text-primary"> Réathletisation </h5></a>
-        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-
-      </div>
-    </div>
-    <div class="card border-0" data-aos="fade-right" data-aos-duration="3000">
-      <a id="img_hover" href="#"><img class="card-img-top w-100" height="277" src="{{asset('images/consultation.jpeg')}}" alt="Card image cap"></a>
-      <div class="card-body">
-        <a href="#"><h5 class="card-title text-primary"> Consultation en neurologie</h5></a>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-      </div>
-    </div>
+ {% endfor %}
+    <!-- fin de srvices -->
   </div>
 
 </section>
@@ -72,32 +59,19 @@ Nous offrons des prestations allant des <strong> soins en kinésithérapie aux s
 
   <hr>
   <div class="card-deck">
-    <div class="card border-0" >
-      <a href="{{path('docteur')}}" id="img_hover">  <img class="card-img-top w-100" height="277" src="{{asset('images/soins.jpeg')}}" alt="Card image cap"></a>
+
+    {% for intervenant in dataIntervenant %}
+    <div class="card border-0 " >
+      <a href="{{path('docteur')}}" id="img_hover">  <img class="card-img-top w-100" height="277" src="{{asset('images/')}}{{intervenant.images}}" alt="Card image cap"></a>
       <div class="card-body">
-        <a href="{{path('docteur')}}"><h5 class="card-title text-primary"> Dr Ndiaye </h5></a>
-        <small class="text-muted">Kine</small>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <a href="{{intervenant.slug}}"><h5 class="card-title text-primary"> {{intervenant.nomComplet}} </h5></a>
+        <small class="text-muted">{{intervenant.domaine}}</small>
+        <p class="card-text">{{intervenant.description |raw |slice(0,100)}}</p>
+        <a class="btn btn-sm btn-danger" href="{{intervenant.slug}}">Voir plus</a>
 
       </div>
     </div>
-    <div class="card border-0" >
-      <a href="" id="img_hover"><img class="card-img-top w-100" height="277" src="{{asset('images/reathletisation.jpeg')}}" alt="Card image cap"></a>
-      <div class="card-body">
-        <a href="#"><h5 class="card-title text-primary"> Dr Diop </h5></a>
-        <small class="text-muted">Neurologist</small>
-        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-
-      </div>
-    </div>
-    <div class="card border-0" >
-      <a href="" id="img_hover"><img class="card-img-top w-100" height="277" src="{{asset('images/consultation.jpeg')}}" alt="Card image cap"></a>
-      <div class="card-body">
-       <a href="#"><h5 class="card-title text-primary"> Dr Fall</h5></a>
-        <small class="text-muted">Dentist</small>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-      </div>
-    </div>
+     {% endfor %}
   </div>
 </section>
 
