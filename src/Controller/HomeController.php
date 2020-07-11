@@ -2,14 +2,18 @@
 namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Repository\ServicesRepository;
 class HomeController extends AbstractController
 {
     /**
      * @Route("/", name="home")
      */
-    public function index()
+    public function index(ServicesRepository $reposervices)
     {
-        return $this->render('home/index.html.twig');
+      $data=$reposervices->findAllService();
+
+        return $this->render('home/index.html.twig',compact('data'));
+
     }
     /**
      * @Route("/contactez-nous", name="contact")
