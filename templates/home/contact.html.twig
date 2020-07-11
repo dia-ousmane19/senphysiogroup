@@ -14,17 +14,15 @@
   <div class="row">
     <!-- formulaire -->
     <div class="col-md-5" data-aos="fade-right" data-aos-duration="3000">
-      <h4 class="bagde badge-danger text-center rounded">Par Email</h4>
-      <p class="lead " id="message_contact">Lorem ipsum dolor sit amet, consectetur adipisicing elit
-        , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      <h4 class="bagde badge-danger text-center rounded">Contact</h4>
+      <p class="lead " id="message_contact">Vous avez la possibilité de nous contacter par différents moyens: <span class="text-danger">whatsapp, appel téléphonique </span> ou<span class="text-danger"> Email</span> .
       </p>
       <div class="" >
         <h3 class="text-center lead text-font-uppercase">Contact info</h3>
 
         <ul class="list-group list-group-flush">
-          <li class="list-group-item" id="emailClick"><img height="70" width="80" src="{{asset('images/message.png')}}" alt=""> </li>
-          <div class="" id="email">
-            <li class="list-group-item" >contact@senphysiogroup.com</li>
+          <div class="">
+            <li class="list-group-item" ><a href="{{path('contact')}}">contact@senphysiogroup.com</a> </li>
             <li class="list-group-item" >+221 33 877 00 29</li>
           </div>
           <li class="list-group-item"><a href="#"><img height="90" width="100" src="{{asset('images/whatsapp.png')}}" alt=""> </a></li>
@@ -60,16 +58,5 @@
 
 {{ include('partials/__footer.html.twig') }}
 {% block javascripts %}
-<script type="text/javascript">
-$(document).ready(function(){
-  $('#email').hide();
-  $('#emailClick').click(function(){
-    $('#email').fadeIn('slow');
-  });
 
-
-
-});
-
-</script>
 {% endblock %}

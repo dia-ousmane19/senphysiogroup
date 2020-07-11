@@ -13,7 +13,7 @@
 {% block body %}
 
 
-<div class="body">
+<div class="">
 <header class="border-bottom">
   <!-- le menu -->
   <nav class="navbar navbar-expand-lg navbar-light bg-default">
@@ -35,16 +35,14 @@
               Physio Sport Dakar
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown">
-              <a class="dropdown-item "  href="{{path('prestation')}}">Prestation</a>
               <a class="dropdown-item"  href="{{path('prv')}}">Prise de Rendez-Vous</a>
               <a class="dropdown-item"  href="{{path('tarif')}}">Tarif</a>
-              <a class="dropdown-item"  href="{{path('intervenant')}}">Intervenants</a>
               <a class="dropdown-item"  href="{{path('lieu')}}">Adresse <i class='fas fa-map-marker-alt'></i></a>
             </div>
           </li>
-          <li class="nav-item " id="li">
+          <!-- <li class="nav-item " id="li">
             <a class="nav-link "  href="#">Dakar Physio Tools</a>
-          </li>
+          </li> -->
           <li class="nav-item " id="li">
             <a class="nav-link "  href="{{path('IPD')}}">Institut Physio Dakar</a>
           </li>
@@ -66,7 +64,7 @@
 
 <!-- la banniere -->
 <div class="container-fluif banniere" >
-  <img class="image-fluid w-100" src="{{asset('images/slide.jpg')}}" alt="">
+  <h1 class="text-center bg-light display-4">Institut Physio de Dakar</h1>
 </div>
 <!-- fin de la banniere -->
 <div class="container bg-light p-4">
@@ -80,7 +78,7 @@
     <div class="col-xs-12 col-sm-12 col-md-4">
       <img class="card-img-top w-100" style="height:auto" src="{{asset('images/institu.png')}}" alt="Card image cap">
       <div class="mt-2">
-        <a href="#" class="btn btn-block btn-primary">Plus d'infos</a>
+        <a href="{{path('contact')}}" class="btn btn-block btn-primary">Plus d'infos</a>
       </div>
     </div>
     <!-- fin -->
@@ -116,17 +114,7 @@
             <img class="card-img-top w-100 m-2" style="height:auto" src="{{asset('images/institut2.jpeg')}}" alt="Card image cap">
           </div>
         </div>
-        <h4   style="font-size:23px" class="badge badge-primary text-center mt-2 mb-2">Nos filières</h4>
-        <ul class="list-group">
-          <li class="list-group-item">filière 1</li>
-          <li class="list-group-item">filière 2</li>
-          <li class="list-group-item">filière 3</li>
-          <li class="list-group-item">filière 4</li>
-          <li class="list-group-item">filière 5</li>
-
-        </ul>
       </div>
-
     </div>
     <!-- fin -->
 
@@ -151,7 +139,7 @@
           <li><a class="text-muted" href="#"><img height="30" width="30" src="{{asset('images/instagram.png')}}" alt="" > Instagram</a></li>
         </ul>
       </div>
-      <div class="col-6 col-md">
+      <!-- <div class="col-6 col-md">
         <h5 class="text-danger">Newsletter</h5>
         <form>
           <div class="form-group">
@@ -159,7 +147,7 @@
           </div>
           <button type="submit" class="btn btn-block btn-danger">Envoyer</button>
         </form>
-      </div>
+      </div> -->
       <div class="col-6 col-md">
         <h5 class="text-danger">A propos</h5>
         <ul class="list-unstyled text-small">
@@ -181,7 +169,7 @@
 <!-- fin du footer -->
 
 {% endblock %}
-{% block javascripts %}
+{# {% block javascripts %}
 <script type="text/javascript">
 $(document).ready(function () {
   $('.loader_bg').fadeOut('slow',function () {
@@ -189,4 +177,4 @@ $(document).ready(function () {
   });
 });
 </script>
-{% endblock %}
+{% endblock %} #}

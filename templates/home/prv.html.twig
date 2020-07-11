@@ -3,7 +3,7 @@
 
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil - SenIT technology{% endblock %}
+{% block title %}Prise de rendez-vous - Sen Physio Group{% endblock %}
 {% block stylesheets %}
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital@1&family=Roboto:wght@500&display=swap" rel="stylesheet">
@@ -34,16 +34,14 @@
               Physio Sport Dakar
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown">
-              <a class="dropdown-item "  href="{{path('prestation')}}">Prestation</a>
               <a class="dropdown-item"  href="{{path('prv')}}">Prise de Rendez-Vous</a>
               <a class="dropdown-item"  href="{{path('tarif')}}">Tarif</a>
-              <a class="dropdown-item"  href="{{path('intervenant')}}">Intervenants</a>
               <a class="dropdown-item"  href="{{path('lieu')}}">Adresse <i class='fas fa-map-marker-alt'></i></a>
             </div>
           </li>
-          <li class="nav-item " id="li">
+          <!-- <li class="nav-item " id="li">
             <a class="nav-link "  href="#">Dakar Physio Tools</a>
-          </li>
+          </li> -->
           <li class="nav-item " id="li">
             <a class="nav-link "  href="{{path('IPD')}}">Institut Physio Dakar</a>
           </li>
@@ -59,18 +57,26 @@
   </nav>
   <!-- fin du menu -->
 </header>
-
-<!-- la banniere -->
-<div class="container-fluif banniere" >
-  <img class="image-fluid w-100" src="{{asset('images/slide.jpg')}}" alt="">
-</div>
-<!-- fin de la banniere -->
-<div class="container border-top border-bottom m-4 p-4 ">
+<div class="container border-bottom m-4 p-4 ">
   <h1 class="text-primary text-center">Prise de rendez-vous</h1>
-  <p class="text-center lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut lab</p>
+  <p class="text-center lead">Vous pouvez prendre rendez-vous soit par <span class="text-danger">whatsapp</span>  soit par <span class="text-danger">Email</span>.Il suffit juste de clicquer sur l'une des icones en-dessous.</p>
 </div>
+<!-- choix -->
 <div class="container">
-  <div class="m-4 bg-secondary rounded p-4">
+  <div class="row">
+    <div class="col-md-5">
+      <img height="72" width="80" src="{{asset('images/whatsapp.png')}}" alt="">
+    </div>
+    <div class="col-md-5">
+      <img height="72" width="80" src="{{asset('images/message.png')}}" id="message" alt="">
+    </div>
+  </div>
+
+</div>
+<!-- fin de choix -->
+<!-- par email -->
+<div class="container">
+  <div class="m-4 bg-secondary rounded p-4" id="messageForm">
     <form>
       <div class="form-row">
         <div class="form-group col-md-6">
@@ -101,5 +107,18 @@
     </form>
   </div>
 </div>
+<!-- fin -->
+
 {{ include('partials/__footer.html.twig') }}
+{% endblock %}
+{% block javascripts %}
+<script type="text/javascript">
+$(document).ready(function(){
+  $('#messageForm').hide();
+  $('#message').on('click',function () {
+    $('#messageForm').fadeIn('5000');
+  });
+});
+</script>
+
 {% endblock %}
