@@ -4,15 +4,26 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\ServicesRepository;
 use App\Repository\IntervenantsRepository;
+use Knp\Component\Pager\PaginatorInterface;
+use Symfony\Component\HttpFoundation\Request;
+
 class HomeController extends AbstractController
 {
     /**
      * @Route("/", name="home")
      */
-    public function index(ServicesRepository $reposervices,IntervenantsRepository $repoIntervenant)
+    public function index(ServicesRepository $reposervices,IntervenantsRepository $repoIntervenant,PaginatorInterface $paginator,Request $request)
     {
       $data=$reposervices->findAllService();
-      $dataIntervenant=$repoIntervenant->findAllIntervenant();
+      $pagination=$repoIntervenant->findAllIntervenant();
+
+
+
+    $dataIntervenant = $paginator->paginate(
+        $pagination, /* query NOT result */
+        $request->query->getInt('page', 1), /*page number*/
+        4 /*limit per page*/
+    );
 
         return $this->render('home/index.html.twig',compact('data','dataIntervenant'));
 
