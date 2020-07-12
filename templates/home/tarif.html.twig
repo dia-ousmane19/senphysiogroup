@@ -1,7 +1,92 @@
-{{ include('partials/__header.html.twig') }}
-{% block body %}
-<h1>Les tarifs</h1>
 
+{% extends 'base.html.twig' %}
+
+{% block title %}senphysiogroup - Institut physio de Dakar{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<link href="https://fonts.googleapis.com/css2?family=Philosopher:ital@1&family=Roboto:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Philosopher:ital@1&family=Roboto:wght@500&family=Vidaloka&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{asset('css/home.css')}}">
 {% endblock %}
 
+{% block body %}
+
+
+<div class="">
+<header class="border-bottom">
+  <!-- le menu -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-default">
+    <a class="navbar-brand" href="{{path('home')}}"><img src="{{asset('images/SportLogo.png')}}" height="50" width="50" alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+
+      </ul>
+      <span class="navbar-text">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active"  id="li">
+            <a class="nav-link "  href="{{path('home')}}" >Accueil</a>
+          </li>
+          <li class="nav-item active"  id="li">
+            <a class="nav-link"  href="{{path('tarif')}}">Tarif</a>
+          </li>
+          <li class="nav-item dropdown active" id="li">
+            <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Physio Sport Dakar
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown">
+              <a class="dropdown-item"  href="{{path('prv')}}">Prise de Rendez-Vous</a>
+              <a class="dropdown-item"  href="{{path('lieu')}}">Adresse <i class='fas fa-map-marker-alt'></i></a>
+            </div>
+          </li>
+          <!-- <li class="nav-item " id="li">
+            <a class="nav-link "  href="#">Dakar Physio Tools</a>
+          </li> -->
+          <li class="nav-item " id="li">
+            <a class="nav-link "  href="{{path('IPD')}}">Institut Physio Dakar</a>
+          </li>
+          <li class="nav-item " id="li">
+            <a class="nav-link  font-weight-bold"  href="{{path('contact')}}">Contact</a>
+          </li>
+          <li class="nav-item " id="li">
+            <a class="nav-link "  href="{{path('apropos')}}">A propos</a>
+          </li>
+        </ul>
+      </span>
+    </div>
+  </nav>
+  <!-- fin du menu -->
+</header>
+
+<div class="bg-danger">
+  <h1 class="text-white text-center p-4">Les tarifs</h1>
+</div>
+<div class="container">
+  <p class="lead text-center">Voici une liste decrivant les tarifs de nos differents services</p>
+  <ul class="list-group">
+  <li class="list-group-item d-flex justify-content-between align-items-center text-primary">
+    <a href="{{path('home')}}">Soins de confort</a>
+    <span class="badge badge-primary badge-pill">25 000 Fcfa</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between text-primary align-items-center">
+    <a href="{{path('home')}}">Soins en kinésithérapie</a>
+    <span class="badge badge-primary badge-pill">10 000 Fcfa</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between text-primary align-items-center">
+    <a href="{{path('home')}}">Réathlétisation</a>
+    <span class="badge badge-primary badge-pill">8000 Fcfa</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between text-primary align-items-center">
+    <a href="{{path('home')}}">Consultations médicales spécialisées</a>
+    <span class="badge badge-primary badge-pill">20 000 Fcfa</span>
+  </li>
+</ul>
+</ul>
+
+</div>
+
 {{ include('partials/__footer.html.twig') }}
+{% endblock %}

@@ -59,7 +59,7 @@
           <a href="{{path('docteur',{'slug':otherIntervenant.slug})}}"><h5 class="card-title text-danger">{{otherIntervenant.nomComplet}}</h5></a>
           <small class="text-muted">{{otherIntervenant.domaine}}</small>
           <p class="card-text text-center">{{otherIntervenant.description |raw |slice(0,100)}}[...]</p>
-          <a href="{{path('docteur',{'slug':otherIntervenant.slug})}}" class="btn btn-sm btn-danger">Voir plus</a>
+          <a href="{{path('docteur',{'slug':otherIntervenant.slug})}}" class="btn btn-sm btn-danger">Voir détails</a>
         </div>
       </div>
       {% endfor %}

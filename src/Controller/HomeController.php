@@ -99,10 +99,13 @@ class HomeController extends AbstractController
         return $this->render('home/doctors.html.twig',compact('data','dataOtherIntervenant'));
     }
     /**
-     * @Route("/services", name="service")
+     * @Route("/{slug}/services", name="service")
      */
-    public function service()
+    public function service($slug,ServicesRepository $reposervice)
     {
-        return $this->render('home/services.html.twig');
+      $dataServicesAll=$reposervice->findOneServices($slug);
+      $dataOtherService=$reposervice->findOtherService($slug);
+
+        return $this->render('home/services.html.twig',compact('dataServicesAll','dataOtherService'));
     }
 }

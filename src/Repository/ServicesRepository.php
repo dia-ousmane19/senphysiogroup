@@ -35,16 +35,32 @@ class ServicesRepository extends ServiceEntityRepository
         ;
     }
 
+    /**
+     * @return Services[] Returns an array of Services objects
+     */
 
-    /*
-    public function findOneBySomeField($value): ?Services
+    public function findOtherService($slug): array
     {
         return $this->createQueryBuilder('s')
-            ->andWhere('s.exampleField = :val')
-            ->setParameter('val', $value)
+             ->andWhere('s.slug != :val')
+             ->setParameter('val', $slug)
+            // ->orderBy('s.id', 'ASC')
+            // ->setMaxResults(10)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+
+
+    public function findOneServices($slug): ?Services
+    {
+        return $this->createQueryBuilder('s')
+            ->andWhere('s.slug = :val')
+            ->setParameter('val', $slug)
             ->getQuery()
             ->getOneOrNullResult()
         ;
     }
-    */
+
 }

@@ -17,15 +17,8 @@ class Formations
      */
     private $id;
 
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    private $createdAt;
 
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    private $expiredAt;
+
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -47,44 +40,14 @@ class Formations
      */
     private $slug;
 
-    /**
-     * @ORM\Column(type="string", length=25, nullable=true)
-     */
-    private $dataAos;
 
-    /**
-     * @ORM\Column(type="string", length=10, nullable=true)
-     */
-    private $dataAosDuration;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getCreatedAt(): ?\DateTimeInterface
-    {
-        return $this->createdAt;
-    }
 
-    public function setCreatedAt(\DateTimeInterface $createdAt): self
-    {
-        $this->createdAt = $createdAt;
-
-        return $this;
-    }
-
-    public function getExpiredAt(): ?\DateTimeInterface
-    {
-        return $this->expiredAt;
-    }
-
-    public function setExpiredAt(\DateTimeInterface $expiredAt): self
-    {
-        $this->expiredAt = $expiredAt;
-
-        return $this;
-    }
 
     public function getTitre(): ?string
     {
@@ -134,27 +97,4 @@ class Formations
         return $this;
     }
 
-    public function getDataAos(): ?string
-    {
-        return $this->dataAos;
-    }
-
-    public function setDataAos(?string $dataAos): self
-    {
-        $this->dataAos = $dataAos;
-
-        return $this;
-    }
-
-    public function getDataAosDuration(): ?string
-    {
-        return $this->dataAosDuration;
-    }
-
-    public function setDataAosDuration(?string $dataAosDuration): self
-    {
-        $this->dataAosDuration = $dataAosDuration;
-
-        return $this;
-    }
 }
