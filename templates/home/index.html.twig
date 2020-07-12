@@ -8,7 +8,6 @@
 </div>
 <!-- fin loader -->
 <div class="body">
-
   <!-- la banniere -->
   <div class="container-fluif banniere" >
     <img class="image-fluid w-100" src="{{asset('images/slide.jpg')}}" alt="">
@@ -94,19 +93,19 @@
     <!-- debut card -->
     <div class="p-4">
       <div class="row row-cols-1 row-cols-md-2" data-aos="fade-in" data-aos-duration="3000">
+    {% for formation in dataFormation %}
 
         <div class="col-xs-12 col-sm-12 col-md-4 mb-4" data-aos="fade-right" data-aos-duration="3000">
           <div class="card" >
-            <a href="#" id="img_hover">  <img src="" class="card-img-top w-100 img-fluid" alt="..."></a>
+            <a href="{{path('formation',{'slug':formation.slug})}}" id="img_hover"><img src="{{asset('images/')}}{{formation.images}}" class="card-img-top w-100 img-fluid" alt="..."></a>
             <div class="card-body">
-              <small class="text-muted">12 Mai 2018</small>
-              <a href="#"><h5 class="card-title">Card title </h5></a>
-              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <a class="btn btn-sm btn-danger" href="#">Visiter</a>
+              <a href="{{path('formation',{'slug':formation.slug})}}"><h5 class="card-title">{{formation.titre}}</h5></a>
+              <p class="card-text">{{formation.description |raw |slice(0,100)}}[...]</p>
+              <a class="btn btn-sm btn-danger" href="{{path('formation',{'slug':formation.slug})}}">Voir détails</a>
             </div>
           </div>
         </div>
-
+   {% endfor %}
       </div>
     </div>
     <!-- fin card -->

@@ -19,32 +19,47 @@ class FormationsRepository extends ServiceEntityRepository
         parent::__construct($registry, Formations::class);
     }
 
-    // /**
-    //  * @return Formations[] Returns an array of Formations objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @return Formations[] Returns an array of Formations objects
+     */
+
+    public function findAllFormation()
     {
         return $this->createQueryBuilder('f')
-            ->andWhere('f.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('f.id', 'ASC')
-            ->setMaxResults(10)
+            // ->andWhere('f.exampleField = :val')
+            // ->setParameter('val', $value)
+            // ->orderBy('f.id', 'ASC')
+            // ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
     }
-    */
+    /**
+     * @return Formations[] Returns an array of Formations objects
+     */
 
-    /*
-    public function findOneBySomeField($value): ?Formations
+    public function findOtherFormation($slug)
     {
         return $this->createQueryBuilder('f')
-            ->andWhere('f.exampleField = :val')
-            ->setParameter('val', $value)
+            ->andWhere('f.slug != :val')
+            ->setParameter('val', $slug)
+            // ->orderBy('f.id', 'ASC')
+            // ->setMaxResults(10)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+
+
+    public function findOneFormation($slug): ?Formations
+    {
+        return $this->createQueryBuilder('f')
+            ->andWhere('f.slug = :val')
+            ->setParameter('val', $slug)
             ->getQuery()
             ->getOneOrNullResult()
         ;
     }
-    */
+
 }

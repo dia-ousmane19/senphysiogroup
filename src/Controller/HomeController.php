@@ -4,6 +4,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\ServicesRepository;
 use App\Repository\IntervenantsRepository;
+use App\Repository\FormationsRepository;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -12,8 +13,9 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function index(ServicesRepository $reposervices,IntervenantsRepository $repoIntervenant,PaginatorInterface $paginator,Request $request)
+    public function index(ServicesRepository $reposervices,IntervenantsRepository $repoIntervenant,PaginatorInterface $paginator,Request $request,FormationsRepository $repoForm)
     {
+      $dataFormation=$repoForm->findAllFormation();
       $data=$reposervices->findAllService();
       $pagination=$repoIntervenant->findAllIntervenant();
 
@@ -25,7 +27,7 @@ class HomeController extends AbstractController
         4 /*limit per page*/
     );
 
-        return $this->render('home/index.html.twig',compact('data','dataIntervenant'));
+        return $this->render('home/index.html.twig',compact('data','dataIntervenant','dataFormation'));
 
     }
 
@@ -66,13 +68,13 @@ class HomeController extends AbstractController
         return $this->render('home/tarif.html.twig');
     }
     /**
-     * @Route("/intervenants", name="intervenant")
+     * @Route("/{slug}/formation", name="formation")
      */
-    public function intervenant()
+    public function formation($slug,FormationsRepository $reposForma)
     {
-
-
-        return $this->render('home/intervenant.html.twig');
+      $dataOtherForma=$reposForma->findOtherFormation($slug);
+      $dataForma=$reposForma->findOneFormation($slug);
+        return $this->render('home/formations.html.twig',compact('dataForma','dataOtherForma'));
     }
     /**
      * @Route("/institut-physio-dakar", name="IPD")
