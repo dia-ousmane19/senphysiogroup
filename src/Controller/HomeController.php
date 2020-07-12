@@ -28,6 +28,8 @@ class HomeController extends AbstractController
         return $this->render('home/index.html.twig',compact('data','dataIntervenant'));
 
     }
+
+
     /**
      * @Route("/contactez-nous", name="contact")
      */
@@ -68,6 +70,8 @@ class HomeController extends AbstractController
      */
     public function intervenant()
     {
+
+
         return $this->render('home/intervenant.html.twig');
     }
     /**
@@ -85,11 +89,14 @@ class HomeController extends AbstractController
         return $this->render('home/lieu.html.twig');
     }
     /**
-     * @Route("/doctors", name="docteur")
+     * @Route("/{slug}/intervenant", name="docteur")
      */
-    public function docteur()
+    public function docteur($slug,IntervenantsRepository $repoIntervenant)
     {
-        return $this->render('home/doctors.html.twig');
+
+      $dataOtherIntervenant=$repoIntervenant->findOtherIntervenant($slug);
+      $data=$repoIntervenant->findOneIntervenant($slug);
+        return $this->render('home/doctors.html.twig',compact('data','dataOtherIntervenant'));
     }
     /**
      * @Route("/services", name="service")

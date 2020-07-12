@@ -23,7 +23,7 @@ class IntervenantsRepository extends ServiceEntityRepository
      * @return Intervenants[] Returns an array of Intervenants objects
      */
 
-    public function findAllIntervenant()
+    public function findAllIntervenant(): array
     {
         return $this->createQueryBuilder('i')
             // ->andWhere('i.exampleField = :val')
@@ -36,15 +36,28 @@ class IntervenantsRepository extends ServiceEntityRepository
     }
 
 
-    /*
-    public function findOneBySomeField($value): ?Intervenants
+
+    public function findOneIntervenant($slug)
     {
         return $this->createQueryBuilder('i')
-            ->andWhere('i.exampleField = :val')
-            ->setParameter('val', $value)
+            ->andWhere('i.slug = :val')
+            ->setParameter('val', $slug)
             ->getQuery()
             ->getOneOrNullResult()
         ;
     }
-    */
+
+    /**
+     * @return Intervenants[] Returns an array of Intervenants objects
+     */
+    public function findOtherIntervenant($slug): array
+    {
+        return $this->createQueryBuilder('i')
+            ->andWhere('i.slug != :val')
+            ->setParameter('val', $slug)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
 }
