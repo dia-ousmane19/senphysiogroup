@@ -10,17 +10,15 @@
 <div class="body">
   <!-- la banniere -->
   <div class="container-fluif banniere" >
-    <div class="" >
-       <img class="img-fluid w-100" height="200px"  src="{{asset('images/slide.jpeg')}}" alt="">
+    <div class="">
+      <img class="img-fluid w-100" height="200px"  src="{{asset('images/slide.jpg')}}" alt="la banniere">
     </div>
-
   </div>
   <!-- fin de la banniere -->
   <!-- button scroll top -->
   <i id="i" class="fas fa-chevron-up"></i>
   <!-- fin  -->
   <!-- le RV -->
-
   <section class="container rounded mt-4 bg-dark " data-aos="fade-in" data-aos-duration="3000">
     <a href="{{path('prv')}}" class="btn btn-dark  btn-block">Prenez un Rendez-Vous</a>
   </section>
@@ -32,7 +30,6 @@
       Nous offrons des prestations allant des <strong> soins en kinésithérapie aux soins de confort en passant par la réathlétisation et les consultations médicales spécialisées</strong>.
     </p>
     <hr>
-
     <div class="card-deck" data-aos="fade-in" data-aos-duration="3000">
       <!-- services -->
       {% for dataService in data %}
@@ -50,11 +47,9 @@
   </section>
   <!-- fin -->
   <!-- nos intervenants -->
-
   <section class="container border-top  mt-4 pb-4 mb-4">
     <h3 class="text-center text-danger">Nos intervenants</h3>
     <p class="text-center lead">Nos intervenants sont très compétents dans leurs domaines.</p>
-
     <hr>
     <div class="navigation">
       {{ knp_pagination_render(dataIntervenant) }}
@@ -62,13 +57,12 @@
     <div class="card-deck">
       {% for intervenant in dataIntervenant %}
       <div class="card border-0 " >
-        <a href="{{path('docteur',{'slug':intervenant.slug})}}" id="img_hover">  <img class="card-img-top w-100 img-fluid " height="277" src="{{asset('images/')}}{{intervenant.images}}" alt="Card image cap"></a>
+        <a href="{{path('docteur',{'slug':intervenant.slug})}}" id="img_hover"><img class="card-img-top w-100 img-fluid " height="277" src="{{asset('images/')}}{{intervenant.images}}" alt="Card image cap"></a>
         <div class="card-body">
           <a href="{{path('docteur',{'slug':intervenant.slug})}}"><h5 class="card-title text-primary"> {{intervenant.nomComplet}} </h5></a>
           <small class="text-muted">{{intervenant.domaine}}</small>
           <p class="card-text">{{intervenant.description |raw |slice(0,100)}}[...]</p>
           <a class="btn btn-sm btn-danger" href="{{path('docteur',{'slug':intervenant.slug})}}">Voir détails</a>
-
         </div>
       </div>
       {% endfor %}
@@ -77,10 +71,8 @@
       {{ knp_pagination_render(dataIntervenant) }}
     </div>
   </section>
-
   <!-- section nos formation -->
   <section class="container mt-4">
-
     <div class="border-top border-bottom d-flex flex-wrap flex-row justify-content-between">
       <div class="">
         <h3 class="text-danger">Nos formations</h3>
@@ -92,8 +84,7 @@
     <!-- debut card -->
     <div class="p-4">
       <div class="row row-cols-1 row-cols-md-2" data-aos="fade-in" data-aos-duration="3000">
-    {% for formation in dataFormation %}
-
+        {% for formation in dataFormation %}
         <div class="col-xs-12 col-sm-12 col-md-4 mb-4" data-aos="fade-right" data-aos-duration="3000">
           <div class="card" >
             <a href="{{path('formation',{'slug':formation.slug})}}" id="img_hover"><img src="{{asset('images/')}}{{formation.images}}" class="card-img-top w-100 img-fluid" alt="..."></a>
@@ -104,18 +95,17 @@
             </div>
           </div>
         </div>
-   {% endfor %}
+        {% endfor %}
       </div>
     </div>
     <!-- fin card -->
     <!-- </section> -->
 
-    <!-- le corps
-  -->
+    <!-- le corps-->
   <!-- le RV -->
 
   <section class="container rounded mt-4 bg-dark " data-aos="fade-in" data-aos-duration="3000">
-    <a href="{{path('prv')}}" class="btn btn-dark  btn-block">Prenez un Rendez-Vous</a>
+    <a href="{{path('prv')}}" class="btn btn-dark btn-block">Prenez un Rendez-Vous</a>
   </section>
   <!-- fin RV -->
   <!-- <section class="container mt-4 border-top pt-4 " data-aos="fade-up" data-aos-duration="3000">
@@ -134,11 +124,9 @@
 <!-- la fin -->
 <!-- fin -->
 </div>
-
 {{ include('partials/__footer.html.twig') }}
 {% endblock %}
 {% block javascripts %}
-
 <script type="text/javascript">
 $(document).ready(function () {
   $(window).scroll(function () {
@@ -155,9 +143,7 @@ $(document).ready(function () {
   $('#i').click(function(){
     $('html').animate({scrollTop:0}, 500);
   });
-
 });
-
 </script>
 <script type="text/javascript">
 $(document).ready(function () {
