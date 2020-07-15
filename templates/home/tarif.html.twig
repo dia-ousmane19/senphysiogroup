@@ -1,27 +1,18 @@
 {{ include('partials/__headerPhysioSport.html.twig') }}
+{% block body %}
 <div class="bg-danger" style="margin-top:70px">
   <h1 class="text-white text-center p-4">Les tarifs</h1>
 </div>
 <div class="container">
-  <p class="lead text-center">Voici une liste decrivant les tarifs de nos differents services</p>
+  <p class="lead text-center">Voici une liste décrivant les tarifs de nos différents services</p>
   <ul class="list-group">
-  <li class="list-group-item d-flex justify-content-between align-items-center text-primary">
-    <a href="{{path('home')}}">Soins de confort</a>
-    <span class="badge badge-primary badge-pill">25 000 Fcfa</span>
-  </li>
-  <li class="list-group-item d-flex justify-content-between text-primary align-items-center">
-    <a href="{{path('home')}}">Soins en kinésithérapie</a>
-    <span class="badge badge-primary badge-pill">10 000 Fcfa</span>
-  </li>
-  <li class="list-group-item d-flex justify-content-between text-primary align-items-center">
-    <a href="{{path('home')}}">Réathlétisation</a>
-    <span class="badge badge-primary badge-pill">8000 Fcfa</span>
-  </li>
-  <li class="list-group-item d-flex justify-content-between text-primary align-items-center">
-    <a href="{{path('home')}}">Consultations médicales spécialisées</a>
-    <span class="badge badge-primary badge-pill">20 000 Fcfa</span>
-  </li>
-</ul>
+    {% for tarif in dataServiceTarif %}
+    <li class="list-group-item d-flex justify-content-between align-items-center text-primary">
+      <a href="{{path('service',{'slug':tarif.slug})}}">{{tarif.nom}}</a>
+      <span class="badge badge-primary badge-pill">{{tarif.prix}} Fcfa</span>
+    </li>
+    {% endfor %}
+  </ul>
 </ul>
 </div>
 

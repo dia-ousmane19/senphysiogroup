@@ -63,9 +63,10 @@ class HomeController extends AbstractController
     /**
      * @Route("/tarifs", name="tarif")
      */
-    public function tarif()
+    public function tarif(ServicesRepository $reposervices)
     {
-        return $this->render('home/tarif.html.twig');
+       $dataServiceTarif=$reposervices->findAllService();
+        return $this->render('home/tarif.html.twig',compact('dataServiceTarif'));
     }
     /**
      * @Route("/{slug}/formation", name="formation")
