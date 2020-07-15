@@ -1,6 +1,17 @@
-{{ include('partials/__headerPhysioSport.html.twig') }}
+
+{% extends 'base.html.twig' %}
+{% block title %}Accueil - Sen physio group{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<link href="https://fonts.googleapis.com/css2?family=Philosopher:ital@1&family=Roboto:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Philosopher:ital@1&family=Roboto:wght@500&family=Vidaloka&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{asset('css/home.css')}}">
+{% endblock %}
 {% block body %}
-<div class="bg-danger" style="margin-top:70px">
+{{ include('partials/__headerPhysioSport.html.twig') }}
+
+<div class="container bg-danger" style="margin-top:70px">
   <h1 class="text-white text-center p-4">Les tarifs</h1>
 </div>
 <div class="container">
@@ -15,6 +26,7 @@
   </ul>
 </ul>
 </div>
-
+<div class="container">
 {{ include('partials/__footer.html.twig') }}
+</div>
 {% endblock %}

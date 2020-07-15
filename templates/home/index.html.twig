@@ -1,18 +1,18 @@
-{{ include('partials/__header.html.twig') }}
+{% extends 'base.html.twig' %}
+{% block title %}Accueil - Sen physio group{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<link href="https://fonts.googleapis.com/css2?family=Philosopher:ital@1&family=Roboto:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Philosopher:ital@1&family=Roboto:wght@500&family=Vidaloka&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{asset('css/home.css')}}">
+{% endblock %}
 {% block body %}
-<!-- loader -->
-<div class="loader_bg">
-  <div class="loader">
-    <img src="{{asset('images/loader.gif')}}" alt="">
-  </div>
-</div>
-<!-- fin loader -->
-<div class="body" style="margin-top:70px">
+{{ include('partials/__header.html.twig') }}
+
   <!-- la banniere -->
-  <div class="container-fluid banniere" >
-    <div class="">
-      <img class="img-fluid w-100" src="{{asset('images/slide.jpg')}}" alt="la banniere">
-    </div>
+  <div class="container-fluid" style="margin-top:79px">
+      <img class="img-fluid w-100 " src="{{asset('images/slide.jpg')}}" alt="">
   </div>
   <!-- fin de la banniere -->
   <!-- button scroll top -->
@@ -123,8 +123,10 @@
 </section> -->
 <!-- la fin -->
 <!-- fin -->
+<div class="container">
+  {{ include('partials/__footer.html.twig') }}
 </div>
-{{ include('partials/__footer.html.twig') }}
+
 {% endblock %}
 {% block javascripts %}
 <script type="text/javascript">
@@ -142,13 +144,6 @@ $(document).ready(function () {
   });
   $('#i').click(function(){
     $('html').animate({scrollTop:0}, 500);
-  });
-});
-</script>
-<script type="text/javascript">
-$(document).ready(function () {
-  $('.loader_bg').fadeOut('slow',function () {
-    $('.body').fadeIn('slow');
   });
 });
 </script>

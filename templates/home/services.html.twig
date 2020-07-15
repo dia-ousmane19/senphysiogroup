@@ -1,8 +1,17 @@
-{{ include('partials/__header.html.twig') }}
+{% extends 'base.html.twig' %}
+{% block title %}Services - Sen physio group{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<link href="https://fonts.googleapis.com/css2?family=Philosopher:ital@1&family=Roboto:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Philosopher:ital@1&family=Roboto:wght@500&family=Vidaloka&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{asset('css/home.css')}}">
+{% endblock %}
 {% block body %}
+{{ include('partials/__header.html.twig') }}
 <!-- banniere doctor -->
-<div class="container-fluid bg-danger" data-aos="fade-in" data-aos-duration="3000">
-  <h1 class="display-4 text-center text-white">Services</h1>
+<div class="container bg-danger" data-aos="fade-in" data-aos-duration="3000" style="margin-top:70px">
+  <h2 class="p-4 text-center text-white">Services</h2>
 </div>
 
 <hr class="bg-danger w-25">
@@ -73,6 +82,6 @@
 </div>
 <!-- fin -->
 
+{{ include('partials/__footer.html.twig') }}
 
 {% endblock %}
-{{ include('partials/__footer.html.twig') }}

@@ -2,20 +2,21 @@
   font-family: myFirstFont;
   src: url(sansation_light.woff);
 } */
-* {
-  box-sizing: border-box;
-  font-family: 'PT Sans', sans-serif;
-}
+
 body,html{
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
 }
-.body{
-  display: none;
-}
+/* .banniere{
+  background-image: url({}));
+  height: 295px;
+  background-size: 100%;
+} */
 
 .container-fluid{
   margin: 0;
+  padding: 0;
 }
 
 a,.number{
@@ -26,9 +27,6 @@ font-size: 15px;
 text-decoration: none;
 
 }
-
-
-
 .commande{
 font-family: 'Roboto', sans-serif;
 font-family: 'Philosopher', sans-serif;
