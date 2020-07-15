@@ -42,7 +42,7 @@ font-family: 'Philosopher', sans-serif;
   font-size: 30px;
   position: fixed;
   bottom: 37px;
-  right: 80px;
+  left: 80px;
   border-radius: 50%;
   cursor: pointer;
   opacity: 0;
