@@ -38,14 +38,10 @@ class Services
     private $slug;
 
     /**
-     * @ORM\Column(type="string", length=25, nullable=true)
+     * @ORM\Column(type="string", length=20)
      */
-    private $dataAos;
+    private $prix;
 
-    /**
-     * @ORM\Column(type="string", length=10, nullable=true)
-     */
-    private $dataAosDuration;
 
     public function getId(): ?int
     {
@@ -100,27 +96,16 @@ class Services
         return $this;
     }
 
-    public function getDataAos(): ?string
+    public function getPrix(): ?string
     {
-        return $this->dataAos;
+        return $this->prix;
     }
 
-    public function setDataAos(?string $dataAos): self
+    public function setPrix(string $prix): self
     {
-        $this->dataAos = $dataAos;
+        $this->prix = $prix;
 
         return $this;
     }
 
-    public function getDataAosDuration(): ?string
-    {
-        return $this->dataAosDuration;
-    }
-
-    public function setDataAosDuration(?string $dataAosDuration): self
-    {
-        $this->dataAosDuration = $dataAosDuration;
-
-        return $this;
-    }
 }

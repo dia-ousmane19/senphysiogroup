@@ -3,14 +3,12 @@
   src: url(sansation_light.woff);
 } */
 * {
-  box-sizing: border-box
+  box-sizing: border-box;
   font-family: 'PT Sans', sans-serif;
 }
 body,html{
   padding: 0;
   margin: 0;
-
-
 }
 .body{
   display: none;
@@ -139,4 +137,8 @@ font-family: 'Philosopher', sans-serif;
     left: 130px;
     top: 280px;
   }
+}
+.container-fluid{
+  padding: 0;
+  margin: 0;
 }

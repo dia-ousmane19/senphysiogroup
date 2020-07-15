@@ -1,7 +1,7 @@
 
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil - Sen physio group{% endblock %}
+{% block title %}senphysiogroup - Institut physio de Dakar{% endblock %}
 {% block stylesheets %}
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital@1&family=Roboto:wght@500&display=swap" rel="stylesheet">
@@ -11,19 +11,24 @@
 {% endblock %}
 
 {% block body %}
+
+
+<div class="">
 <header class="border-bottom">
   <!-- le menu -->
   <nav class="navbar fixed-top bg-white border-bottom navbar-expand-lg navbar-light bg-default">
-    <a class="navbar-brand" href="{{path('home')}}"><img src="{{asset('images/logo.png')}}" height="50" width="72" alt="" class="img-fluid"></a>
+    <a class="navbar-brand" href="{{path('home')}}"><img class="img-fluid" src="{{asset('images/InstitutLogo.png')}}" height="50" width="150" alt=""></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav mr-auto"></ul>
+      <ul class="navbar-nav mr-auto">
+
+      </ul>
       <span class="navbar-text">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active"  id="li">
-            <a class="nav-link"  href="{{path('home')}}">Accueil</a>
+            <a class="nav-link "  href="{{path('home')}}" >Accueil</a>
           </li>
           <li class="nav-item active"  id="li">
             <a class="nav-link"  href="{{path('tarif')}}">Tarif</a>
@@ -34,7 +39,6 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown">
               <a class="dropdown-item"  href="{{path('prv')}}">Prise de Rendez-Vous</a>
-
               <a class="dropdown-item"  href="{{path('lieu')}}">Adresse <i class='fas fa-map-marker-alt'></i></a>
             </div>
           </li>
@@ -56,5 +60,3 @@
   </nav>
   <!-- fin du menu -->
 </header>
-
-{% endblock %}
