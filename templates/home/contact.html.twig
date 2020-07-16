@@ -42,20 +42,23 @@
 
     </div>
     <!-- fin du formulaire -->
+
+
+
     <!-- info -->
     <div class="col-md-5" data-aos="fade-left" data-aos-duration="3000">
-      <form>
+        {{form_start(contacForm)}}
         <div class="form-group">
-          <input type="text" class="form-control" id="exampleInputEmail1" a placeholder="Votre nom (optionnel)">
+          {{form_row(contacForm.nom)}}
         </div>
         <div class="form-group">
-          <input type="text" class="form-control" id=""  placeholder="Votre addresse Email (obligatoire)">
+          {{form_row(contacForm.email)}}
         </div>
         <div class="form-group">
-          <textarea class="form-control" id="" placeholder="Votre message (obligatoire)" rows="3"></textarea>
+          {{form_row(contacForm.message)}}
         </div>
-        <button type="submit" class="btn btn-danger btn-block mb-1">Envoyer</button>
-      </form>
+        
+    {{form_end(contacForm)}}
     </div>
     <!-- fin de l'info -->
   </div>
