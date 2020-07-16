@@ -5,8 +5,10 @@
   <title>{% block title %}Sen physio group{% endblock %}</title>
   <meta name="description" content="Sen Physio Group est une société spécialisée dans toute la chaîne de la réadaptation fonctionnelle, de la formation aux soins en passant par l’équipement des structures de rééducation fonctionnelle et la vente de consommables.">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="{{ asset('bundles/mercuryseriesflashy/css/flashy.css') }}">
   <link rel="icon" type="image/ico" sizes="16x16" href="{{asset('images/favicon.ico')}}">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 
   {% block stylesheets %}{% endblock %}
 </head>
@@ -16,7 +18,7 @@
   <!-- fin  -->
   <!-- whatsapp -->
 
-<div class="elfsight-app-c76f631c-c023-4a9b-ad2e-1c35b596028a"></div>
+  <div class="elfsight-app-c76f631c-c023-4a9b-ad2e-1c35b596028a"></div>
   <!-- fin de whatsapp -->
   {% block body %}{% endblock %}
 
@@ -26,12 +28,18 @@
   <script src='https://kit.fontawesome.com/a076d05399.js'></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+  <!-- Include Flashy default partial -->
+
   <script>
   AOS.init();
   </script>
   {% block javascripts %}
-
+  <!-- Flashy depends on jQuery -->
+  <script src="//code.jquery.com/jquery.js"></script>
+  <!-- Load Flashy default JavaScript -->
+  <script src="{{ asset('bundles/mercuryseriesflashy/js/flashy.js') }}"></script>
 
   {% endblock %}
+     {{ include('@MercurySeriesFlashy/flashy.html.twig') }}
 </body>
 </html>

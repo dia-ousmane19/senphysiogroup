@@ -1,18 +1,19 @@
 <?php
 
 namespace App\Controller;
-
+use MercurySeries\FlashyBundle\FlashyNotifier;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use App\Form\ContactType;
+
 
 class ContactController extends AbstractController
 {
     /**
      * @Route("/contactez-nous", name="contact")
      */
-    public function index(Request $request, \Swift_Mailer $mailer)
+    public function index(Request $request, \Swift_Mailer $mailer,FlashyNotifier $flashy)
     {
       $form = $this->createForm(ContactType::class);
       $form->handleRequest($request);
@@ -30,8 +31,8 @@ class ContactController extends AbstractController
                 )
         ;
         $mailer->send($message);
-        echo "Message a ete bien envoye";
-        return $this->redirectToRoute('home');
+        $flashy->success('Votre message a bien été envoyé,nous reviendrons vers vous dans les plus brefs délais');
+        return $this->redirectToRoute('contact');
       }
 
         return $this->render('home/contact.html.twig',['contacForm'=>$form->createView()]);
