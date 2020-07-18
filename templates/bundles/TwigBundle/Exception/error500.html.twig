@@ -1,6 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block title %}Accueil - Sen physio group{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<link href="https://fonts.googleapis.com/css2?family=Philosopher:ital@1&family=Roboto:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Philosopher:ital@1&family=Roboto:wght@500&family=Vidaloka&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{asset('css/home.css')}}">
+{% endblock %}
+{% block body %}
 {{ include('partials/__header.html.twig') }}
 <div class="container bg-danger p-4">
   <h1 class="text-center text-white">Service temporairement indisponible. Merci de réessayer dans quelques instants.</h1>
 </div>
 
 {{ include('partials/__footer.html.twig') }}
+{% endblock %}
