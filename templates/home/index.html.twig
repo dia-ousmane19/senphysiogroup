@@ -17,9 +17,13 @@
 <!-- fin de la banniere -->
 
 <!-- le RV -->
-<section class="container rounded mt-4 bg-dark " data-aos="fade-in" data-aos-duration="3000">
-  <a href="{{path('prv')}}" class="btn btn-dark  btn-block">Prenez un Rendez-Vous</a>
-</section>
+<div class="container-fluid mt-4  bg-dark" data-aos="fade-in" data-aos-duration="3000" style="padding: 40px 40px">
+ <div class="d-flex justify-content-center">
+   <a href="{{path('prv')}}"  style="border:solid #fff 1px" class="btn p-2 btn-dark ">Prenez un Rendez-Vous</a>
+ </div>
+
+</div>
+
 <!-- fin RV -->
 <!-- services -->
 <section class="container border-top  mt-4 pb-4 mb-4">
@@ -101,17 +105,20 @@
 
   <!-- le corps-->
   <!-- le RV -->
+<div class="container-fluid  bg-dark" data-aos="fade-in" data-aos-duration="3000" style="padding: 40px 40px">
+   <div class="d-flex justify-content-center">
+     <a href="{{path('prv')}}"  style="border:solid #fff 1px" class="btn p-2 btn-dark ">Prenez un Rendez-Vous</a>
+   </div>
 
-  <section class="container rounded mt-4 bg-dark " data-aos="fade-in" data-aos-duration="3000">
-    <a href="{{path('prv')}}" class="btn btn-dark btn-block">Prenez un Rendez-Vous</a>
-  </section>
+</div>
+
   <!-- fin RV -->
   <!-- les references -->
   <section  class="mt-4">
     <h2 class="text-center text-danger">Nos Références</h2>
     <div class="row">
       {% for i in range(1,5) %}
-      <div class="col-5 col-sm border img-thumbnail m-1"><img class="w-100" src="{{asset('images/reference/logo')}}{{i}}.png" alt=""></div>
+      <div class="col-5 col-sm border-0 img-thumbnail m-1"><img class="w-100" src="{{asset('images/reference/logo')}}{{i}}.png" alt=""></div>
         {% endfor %}
     </div>
   </section>
