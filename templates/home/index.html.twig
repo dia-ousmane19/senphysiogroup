@@ -10,102 +10,112 @@
 {% block body %}
 {{ include('partials/__header.html.twig') }}
 
-  <!-- la banniere -->
-  <div class="container-fluid" style="margin-top:79px">
-      <img class="img-fluid w-100 " src="{{asset('images/slide.jpg')}}" alt="">
-  </div>
-  <!-- fin de la banniere -->
+<!-- la banniere -->
+<div class="container-fluid" style="margin-top:79px">
+  <img class="img-fluid w-100 " src="{{asset('images/slide.jpg')}}" alt="">
+</div>
+<!-- fin de la banniere -->
 
-  <!-- le RV -->
-  <section class="container rounded mt-4 bg-dark " data-aos="fade-in" data-aos-duration="3000">
-    <a href="{{path('prv')}}" class="btn btn-dark  btn-block">Prenez un Rendez-Vous</a>
-  </section>
-  <!-- fin RV -->
-  <!-- services -->
-  <section class="container border-top  mt-4 pb-4 mb-4">
-    <h3 class="text-center text-danger">Nos services</h3>
-    <p class="text-center lead">
-      Nous offrons des prestations allant des <strong> soins en kinésithérapie aux soins de confort en passant par la réathlétisation et les consultations médicales spécialisées</strong>.
-    </p>
-    <hr>
-    <div class="card-deck" data-aos="fade-in" data-aos-duration="3000">
-      <!-- services -->
-      {% for dataService in data %}
-      <div class="card  border-0" data-aos="fade-left" data-aos-duration="3000">
-        <a href="{{path('service',{'slug':dataService.slug})}}" id="img_hover"><img class="card-img-top img-fluid w-100"  height="277" src="{{asset('images/')}}{{dataService.images}}" alt="Card image cap"></a>
-        <div class="card-body">
-          <a href="{{path('service',{'slug':dataService.slug})}}"><h5 class="card-title text-primary">{{dataService.nom}}</h5></a>
-          <p class="card-text">{{dataService.description |raw |slice(0,150)}}[...]</p>
-          <a class="btn btn-sm btn-danger" href="{{path('service',{'slug':dataService.slug})}}">Voir détails</a>
-        </div>
-      </div>
-      {% endfor %}
-      <!-- fin de srvices -->
-    </div>
-  </section>
-  <!-- fin -->
-  <!-- nos intervenants -->
-  <section class="container border-top  mt-4 pb-4 mb-4">
-    <h3 class="text-center text-danger">Nos intervenants</h3>
-    <p class="text-center lead">Nos intervenants sont très compétents dans leurs domaines.</p>
-    <hr>
-    <div class="navigation">
-      {{ knp_pagination_render(dataIntervenant) }}
-    </div>
-    <div class="card-deck">
-      {% for intervenant in dataIntervenant %}
-      <div class="card border-0 " >
-        <a href="{{path('docteur',{'slug':intervenant.slug})}}" id="img_hover"><img class="card-img-top w-100 img-fluid " height="277" src="{{asset('images/')}}{{intervenant.images}}" alt="Card image cap"></a>
-        <div class="card-body">
-          <a href="{{path('docteur',{'slug':intervenant.slug})}}"><h5 class="card-title text-primary"> {{intervenant.nomComplet}} </h5></a>
-          <small class="text-muted">{{intervenant.domaine}}</small>
-          <p class="card-text">{{intervenant.description |raw |slice(0,100)}}[...]</p>
-          <a class="btn btn-sm btn-danger" href="{{path('docteur',{'slug':intervenant.slug})}}">Voir détails</a>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-    <div class="navigation">
-      {{ knp_pagination_render(dataIntervenant) }}
-    </div>
-  </section>
-  <!-- section nos formation -->
-  <section class="container mt-4">
-    <div class="border-top border-bottom d-flex flex-wrap flex-row justify-content-between">
-      <div class="">
-        <h3 class="text-danger">Nos formations</h3>
-      </div>
-      <div class="mt-1">
-        <button class="btn d-none btn-danger btn-sm mb-1">Voir plus</button>
+<!-- le RV -->
+<section class="container rounded mt-4 bg-dark " data-aos="fade-in" data-aos-duration="3000">
+  <a href="{{path('prv')}}" class="btn btn-dark  btn-block">Prenez un Rendez-Vous</a>
+</section>
+<!-- fin RV -->
+<!-- services -->
+<section class="container border-top  mt-4 pb-4 mb-4">
+  <h3 class="text-center text-danger">Nos services</h3>
+  <p class="text-center lead">
+    Nous offrons des prestations allant des <strong> soins en kinésithérapie aux soins de confort en passant par la réathlétisation et les consultations médicales spécialisées</strong>.
+  </p>
+  <hr>
+  <div class="card-deck" data-aos="fade-in" data-aos-duration="3000">
+    <!-- services -->
+    {% for dataService in data %}
+    <div class="card  border-0" data-aos="fade-left" data-aos-duration="3000">
+      <a href="{{path('service',{'slug':dataService.slug})}}" id="img_hover"><img class="card-img-top img-fluid w-100"  height="277" src="{{asset('images/')}}{{dataService.images}}" alt="Card image cap"></a>
+      <div class="card-body">
+        <a href="{{path('service',{'slug':dataService.slug})}}"><h5 class="card-title text-primary">{{dataService.nom}}</h5></a>
+        <p class="card-text">{{dataService.description |raw |slice(0,150)}}[...]</p>
+        <a class="btn btn-sm btn-danger" href="{{path('service',{'slug':dataService.slug})}}">Voir détails</a>
       </div>
     </div>
-    <!-- debut card -->
-    <div class="p-4">
-      <div class="row row-cols-1 row-cols-md-2" data-aos="fade-in" data-aos-duration="3000">
-        {% for formation in dataFormation %}
-        <div class="col-xs-12 col-sm-12 col-md-4 mb-4" data-aos="fade-right" data-aos-duration="3000">
-          <div class="card" >
-            <a href="{{path('formation',{'slug':formation.slug})}}" id="img_hover"><img src="{{asset('images/')}}{{formation.images}}" class="card-img-top w-100 img-fluid" alt="..."></a>
-            <div class="card-body">
-              <a href="{{path('formation',{'slug':formation.slug})}}"><h5 class="card-title">{{formation.titre}}</h5></a>
-              <p class="card-text">{{formation.description |raw |slice(0,100)}}[...]</p>
-              <a class="btn btn-sm btn-danger" href="{{path('formation',{'slug':formation.slug})}}">Voir détails</a>
-            </div>
+    {% endfor %}
+    <!-- fin de srvices -->
+  </div>
+</section>
+<!-- fin -->
+<!-- nos intervenants -->
+<section class="container border-top  mt-4 pb-4 mb-4">
+  <h3 class="text-center text-danger">Nos intervenants</h3>
+  <p class="text-center lead">Nos intervenants sont très compétents dans leurs domaines.</p>
+  <hr>
+  <div class="navigation">
+    {{ knp_pagination_render(dataIntervenant) }}
+  </div>
+  <div class="card-deck">
+    {% for intervenant in dataIntervenant %}
+    <div class="card border-0 " >
+      <a href="{{path('docteur',{'slug':intervenant.slug})}}" id="img_hover"><img class="card-img-top w-100 img-fluid " height="277" src="{{asset('images/')}}{{intervenant.images}}" alt="Card image cap"></a>
+      <div class="card-body">
+        <a href="{{path('docteur',{'slug':intervenant.slug})}}"><h5 class="card-title text-primary"> {{intervenant.nomComplet}} </h5></a>
+        <small class="text-muted">{{intervenant.domaine}}</small>
+        <p class="card-text">{{intervenant.description |raw |slice(0,100)}}[...]</p>
+        <a class="btn btn-sm btn-danger" href="{{path('docteur',{'slug':intervenant.slug})}}">Voir détails</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="navigation">
+    {{ knp_pagination_render(dataIntervenant) }}
+  </div>
+</section>
+<!-- section nos formation -->
+<section class="container mt-4">
+  <div class="border-top border-bottom d-flex flex-wrap flex-row justify-content-between">
+    <div class="">
+      <h3 class="text-danger">Nos formations</h3>
+    </div>
+    <div class="mt-1">
+      <button class="btn d-none btn-danger btn-sm mb-1">Voir plus</button>
+    </div>
+  </div>
+  <!-- debut card -->
+  <div class="p-4">
+    <div class="row row-cols-1 row-cols-md-2" data-aos="fade-in" data-aos-duration="3000">
+      {% for formation in dataFormation %}
+      <div class="col-xs-12 col-sm-12 col-md-4 mb-4" data-aos="fade-right" data-aos-duration="3000">
+        <div class="card" >
+          <a href="{{path('formation',{'slug':formation.slug})}}" id="img_hover"><img src="{{asset('images/')}}{{formation.images}}" class="card-img-top w-100 img-fluid" alt="..."></a>
+          <div class="card-body">
+            <a href="{{path('formation',{'slug':formation.slug})}}"><h5 class="card-title">{{formation.titre}}</h5></a>
+            <p class="card-text">{{formation.description |raw |slice(0,100)}}[...]</p>
+            <a class="btn btn-sm btn-danger" href="{{path('formation',{'slug':formation.slug})}}">Voir détails</a>
           </div>
         </div>
-        {% endfor %}
       </div>
+      {% endfor %}
     </div>
-    <!-- fin card -->
-    <!-- </section> -->
+  </div>
+  <!-- fin card -->
+  <!-- </section> -->
 
-    <!-- le corps-->
+  <!-- le corps-->
   <!-- le RV -->
 
   <section class="container rounded mt-4 bg-dark " data-aos="fade-in" data-aos-duration="3000">
     <a href="{{path('prv')}}" class="btn btn-dark btn-block">Prenez un Rendez-Vous</a>
   </section>
   <!-- fin RV -->
+  <!-- les references -->
+  <section  class="mt-4">
+    <h2 class="text-center text-danger">Nos Références</h2>
+    <div class="row">
+      {% for i in range(1,5) %}
+      <div class="col-5 col-sm border img-thumbnail m-1"><img class="w-100" src="{{asset('images/reference/logo')}}{{i}}.png" alt=""></div>
+        {% endfor %}
+    </div>
+  </section>
+  <!-- fin -->
   <!-- <section class="container mt-4 border-top pt-4 " data-aos="fade-up" data-aos-duration="3000">
   <div class="bg-transparent d-flex flex-column justify-content-center mb-1 align-items-center">
   <div class="">
