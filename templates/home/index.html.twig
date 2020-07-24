@@ -35,9 +35,9 @@
       <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
       <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     </ol>
-    <div class="carousel-inner bg-dark p-4">
+    <div class="carousel-inner bg-dark rounded p-4">
       <div class="carousel-item active">
-        <p class="text-center text-white rounded lead">
+        <p class="text-center text-white  lead">
           Nous offrons des prestations allant des <strong> soins en kinésithérapie aux soins de confort en passant par la réathlétisation et les consultations médicales spécialisées</strong>.
         </p>
         <hr>
@@ -57,7 +57,24 @@
         </div>
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="{{asset('images/photo.svg')}}" alt="Second slide">
+        <!-- debut card -->
+        <div class="p-4">
+          <div class="row row-cols-1 row-cols-md-2" data-aos="fade-in" data-aos-duration="3000">
+            {% for formation in dataFormation %}
+            <div class="col-xs-12 col-sm-12 col-md-4 mb-4" data-aos="fade-right" data-aos-duration="3000">
+              <div class="card" >
+                <a href="{{path('formation',{'slug':formation.slug})}}" id="img_hover"><img src="{{asset('images/')}}{{formation.images}}" class="card-img-top w-100 img-fluid" alt="..."></a>
+                <div class="card-body">
+                  <a href="{{path('formation',{'slug':formation.slug})}}"><h5 class="card-title">{{formation.titre}}</h5></a>
+                  <p class="card-text">{{formation.description |raw |slice(0,100)}}[...]</p>
+                  <a class="btn btn-sm btn-danger" href="{{path('formation',{'slug':formation.slug})}}">Voir détails</a>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        <!-- fin card -->
       </div>
       <div class="carousel-item">
         <img class="d-block w-100" src="{{asset('images/photo.svg')}}" alt="Third slide">
