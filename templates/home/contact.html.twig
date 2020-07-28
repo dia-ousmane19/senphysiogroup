@@ -15,6 +15,14 @@
 
 
 <div class="container">
+{% for messageSuccess in app.Flashes("success") %}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{ messageSuccess  }}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{% endfor %}
 
   <div class="" data-aos="fade-in" data-aos-duration="3000" >
   <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7715.786820288257!2d-17.4159158!3d14.7750334!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec10c5f8ef21227%3A0xd30bb26f6b39c28d!2sMALIBU%20BEACH!5e0!3m2!1sen!2ssn!4v1594130024361!5m2!1sen!2ssn" class="w-100 col-xs-12"  frameborder="0" style="border:0;" height="450" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
@@ -57,7 +65,7 @@
         <div class="form-group">
           {{form_row(contacForm.message)}}
         </div>
-        
+
     {{form_end(contacForm)}}
     </div>
     <!-- fin de l'info -->
