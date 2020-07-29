@@ -34,13 +34,13 @@
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <!--<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>-->
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
       </ol>
       <div class="carousel-inner bg-light  p-4 rounded" >
         <div class="carousel-item active">
-          <h3 class="text-center text-danger">Soins en kinésithérapie</h3>
+          <h3 class="text-center text-danger">Consultation et soin en médecine physique et réadaptation</h3>
           <p class="text-center  lead">
-          <strong>Nous offrons des prestations allant des soins en kinésithérapie aux soins de confort en passant par la réathlétisation et les consultations médicales spécialisées</strong>.
+            <strong>Nous offrons des prestations allant des soins en kinésithérapie aux soins de confort en passant par la réathlétisation et les consultations médicales spécialisées</strong>.
           </p>
           <hr>
 
@@ -63,11 +63,11 @@
         <div class="carousel-item">
           <!-- debut card -->
           <div class="p-4">
-            <h3 class="text-center text-danger">Nos formations</h3>
+            <h3 class="text-center text-danger">Formations initiales et continues en kinésithérapie</h3>
             <div class="card-deck">
               {% for formation in dataFormation %}
               <div class="card">
-                <a href="{{path('formation',{'slug':formation.slug})}}" id="img_hover"><img src="{{asset('images/' ) |imagine_filter("thumb")}}{{formation.images}} " class="card-img-top w-100 img-fluid" alt="..."></a>
+                <a href="{{path('formation',{'slug':formation.slug})}}" id="img_hover"><img src="{{asset('images/')}}{{formation.images}} " class="card-img-top w-100 img-fluid" alt="..."></a>
                 <div class="card-body">
                   <a href="{{path('formation',{'slug':formation.slug})}}"><h5 class="card-title">{{formation.titre}}</h5></a>
                   <p class="card-text">{{formation.description |raw |slice(0,100)}}[...]</p>
@@ -79,9 +79,25 @@
           </div>
           <!-- fin card -->
         </div>
-      <!--   <div class="carousel-item">
-          <img class="d-block w-100" src="" alt="Third slide">
-        </div> -->
+        <div class="carousel-item">
+          <h3 class="text-center text-danger">Distribution matérielle et consommable en kinésithérapie et appareil orthopédie.</h3>
+
+          <div class="card-group">
+            <div class="card border-0">
+              <img class="img-thumbnail card-img-top" src="{{asset('images/tools1.jpg')}}" alt="Card image cap">
+              <div class="card-body">
+
+              </div>
+            </div>
+            <div class="card border-0 m-1">
+              <img class="img-thumbnail card-img-top" src="{{asset('images/tools2.jpg')}}" alt="Card image cap">
+              <div class="card-body">
+
+              </div>
+            </div>
+
+          </div>
+        </div>
       </div>
       <a class="carousel-control-prev bg-danger" style="width: 20px" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -124,31 +140,31 @@
 <!-- section nos formation -->
 
 
-  <!-- le corps-->
-  <!-- le RV -->
-  <div class="container-fluid  bg-dark" data-aos="fade-in" data-aos-duration="3000" style="padding: 40px 40px">
-    <div class="d-flex justify-content-center">
-      <a href="{{path('prv')}}"  style="border:solid #fff 1px" class="btn p-2 btn-dark ">Prenez un Rendez-Vous</a>
-    </div>
-
+<!-- le corps-->
+<!-- le RV -->
+<div class="container-fluid  bg-dark" data-aos="fade-in" data-aos-duration="3000" style="padding: 40px 40px">
+  <div class="d-flex justify-content-center">
+    <a href="{{path('prv')}}"  style="border:solid #fff 1px" class="btn p-2 btn-dark ">Prenez un Rendez-Vous</a>
   </div>
 
-  <!-- fin RV -->
-  <!-- les references -->
-  <section  class="mt-4">
-    <h2 class="text-center text-danger">Nos Références</h2>
-    <div class="row">
-      {% for i in range(1,5) %}
-      <div class="col-5 col-sm border-0 img-thumbnail m-1"><img class="w-100" src="{{asset('images/reference/logo')}}{{i}}.png" alt=""></div>
-      {% endfor %}
-    </div>
-  </section>
-  <!-- fin -->
-  <!-- <section class="container mt-4 border-top pt-4 " data-aos="fade-up" data-aos-duration="3000">
-  <div class="bg-transparent d-flex flex-column justify-content-center mb-1 align-items-center">
-  <div class="">
-  <h3 class="text-center commande" >Vos commande en un clic</h3>
-  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+</div>
+
+<!-- fin RV -->
+<!-- les references -->
+<section  class="mt-4">
+  <h2 class="text-center text-danger">Nos Références</h2>
+  <div class="row">
+    {% for i in range(1,5) %}
+    <div class="col-5 col-sm border-0 img-thumbnail m-1"><img class="w-100" src="{{asset('images/reference/logo')}}{{i}}.png" alt=""></div>
+    {% endfor %}
+  </div>
+</section>
+<!-- fin -->
+<!-- <section class="container mt-4 border-top pt-4 " data-aos="fade-up" data-aos-duration="3000">
+<div class="bg-transparent d-flex flex-column justify-content-center mb-1 align-items-center">
+<div class="">
+<h3 class="text-center commande" >Vos commande en un clic</h3>
+<p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
 </div>
 <div class="" data-aos="fade-up" data-aos-duration="3000">
 <a class="btn btn-primary btn-danger btn-lg"  href="#" role="button">Visiter notre boutique <i class="fas fa-caret-right"></i></a>
